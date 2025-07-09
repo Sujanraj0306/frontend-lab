@@ -1,0 +1,675 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Book Catalogue - BookHaven</title>
+</head>
+<body style="margin:0; font-family:sans-serif; background:white;">
+
+<!-- Fixed Header -->
+<nav style="position:fixed; top:0; width:96%; background-color:white; padding:20px 40px; box-shadow:0 2px 10px rgba(0,0,0,0.05); z-index:999;">
+  <div style="display:flex; justify-content:space-between; align-items:center;">
+    <div style="display:flex; align-items:center; gap:10px;">
+      <div style="padding:1px; border-radius:10px;">
+        <span style="color:white; font-size:40px;">
+          <img src="data:image/png;base64,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" height="40px" width="40px">
+        </span>
+      </div>
+      <div>
+        <h1 style="margin:0; font-size:24px;">BookHaven</h1>
+        <p style="margin:0; font-size:14px; color:gray;">Premium Collection</p>
+      </div>
+    </div>
+    <div style="display:flex; gap:40px; align-items:center;">
+      <a href="home.html" style="text-decoration:none; color:black; font-weight:500;">Home</a>
+      <a href="catalogue.html" style="text-decoration:none; color:black; font-weight:500;">Catalogue</a>
+      <a href="cart.html" style="text-decoration:none; color:black; font-weight:500;">Cart</a>
+      <a href="#contact" style="text-decoration:none; color:black; font-weight:500;">Login</a>
+      <a href="#store" style="padding:10px 20px; background:black; color:white; border-radius:8px; text-decoration:none; font-weight:500;">Register</a>
+    </div>
+  </div>
+</nav>
+
+<!-- Layout Container -->
+<div style="display:flex; padding-top:120px;">
+
+  <!-- Sidebar -->
+
+<aside style="
+  position:fixed;
+  top:80px;
+  left:0;
+  width:220px;
+  height:calc(100vh - 80px);
+  padding:30px 20px;
+  background:#f9f9f9;
+  border-right:1px solid #ddd;
+  overflow-y:auto;
+  box-shadow: 2px 0 5px rgba(0,0,0,0.05);
+">
+  <h3 style="margin-bottom:20px; font-size:18px; color:black;">Categories</h3>
+  <ul style="list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:15px;">
+    
+    <li>
+      <a href="#all" style="
+        display:flex;
+        justify-content:space-between;
+        align-items:center;
+        padding:10px 14px;
+        border:1px solid #ccc;
+        border-radius:8px;
+        background:white;
+        color:black;
+        text-decoration:none;
+        font-size:14px;
+        font-weight:500;
+        transition:all 0.3s;
+      " onmouseover="this.style.background='#eaeaea'" onmouseout="this.style.background='white'">
+        <span>All Books</span> <span>➔</span>
+      </a>
+    </li>
+
+    <li>
+      <a href="#computerscience" style="
+        display:flex;
+        justify-content:space-between;
+        align-items:center;
+        padding:10px 14px;
+        border:1px solid #ccc;
+        border-radius:8px;
+        background:white;
+        color:black;
+        text-decoration:none;
+        font-size:14px;
+        font-weight:500;
+        transition:all 0.3s;
+      " onmouseover="this.style.background='#eaeaea'" onmouseout="this.style.background='white'">
+        <span>Computer Science</span> <span>➔</span>
+      </a>
+    </li>
+
+    <li>
+      <a href="#electronics" style="
+        display:flex;
+        justify-content:space-between;
+        align-items:center;
+        padding:10px 14px;
+        border:1px solid #ccc;
+        border-radius:8px;
+        background:white;
+        color:black;
+        text-decoration:none;
+        font-size:14px;
+        font-weight:500;
+        transition:all 0.3s;
+      " onmouseover="this.style.background='#eaeaea'" onmouseout="this.style.background='white'">
+        <span>Electronics</span> <span>➔</span>
+      </a>
+    </li>
+
+    <li>
+      <a href="#electrical" style="
+        display:flex;
+        justify-content:space-between;
+        align-items:center;
+        padding:10px 14px;
+        border:1px solid #ccc;
+        border-radius:8px;
+        background:white;
+        color:black;
+        text-decoration:none;
+        font-size:14px;
+        font-weight:500;
+        transition:all 0.3s;
+      " onmouseover="this.style.background='#eaeaea'" onmouseout="this.style.background='white'">
+        <span>Electrical</span> <span>➔</span>
+      </a>
+    </li>
+
+    <li>
+      <a href="#civil" style="
+        display:flex;
+        justify-content:space-between;
+        align-items:center;
+        padding:10px 14px;
+        border:1px solid #ccc;
+        border-radius:8px;
+        background:white;
+        color:black;
+        text-decoration:none;
+        font-size:14px;
+        font-weight:500;
+        transition:all 0.3s;
+      " onmouseover="this.style.background='#eaeaea'" onmouseout="this.style.background='white'">
+        <span>Civil Engineering</span> <span>➔</span>
+      </a>
+    </li>
+
+  </ul>
+</aside>
+
+
+
+  <!-- Main Catalogue Content -->
+  
+  <main style="flex:1; padding:30px 40px;margin-left: 15%;">
+    
+    <!-- Category Title -->
+    <div style="margin-bottom:40px;">
+      <h1 style="font-size:32px; font-weight:bold; color:black; margin-bottom:5px;scroll-margin-top:180px" id="all" >All Books</h1>
+      <p style="font-size:16px; color:gray;">Explore our curated collection of academic resources</p>
+    </div>
+
+    <!-- Filters -->
+  <div style="background:#f9f9f9; border:1px solid #e5e7eb; border-radius:16px; padding:24px 40px; margin:5% auto; box-shadow:0 2px 10px rgba(0,0,0,0.03); width:80%;">
+  <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:20px; align-items:center;">
+    
+    <!-- Search Box with Icon -->
+    <div style="position:relative; width:80%;">
+      <input 
+        type="text" 
+        placeholder="Search books or authors..." 
+        style="padding:12px 16px 12px 44px; border:1px solid #ccc; border-radius:12px; width:100%; font-size:15px; background:white;" 
+      />
+      <span style="position:absolute; top:50%; left:14px; transform:translateY(-50%); color:#aaa;">
+        <svg xmlns="http://www.w3.org/2000/svg" height="20" width="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+          <circle cx="11" cy="11" r="8" />
+          <line x1="21" y1="21" x2="16.65" y2="16.65" />
+        </svg>
+      </span>
+    </div>
+
+    <!-- Category Filter -->
+    <div style="width:100%;">
+      <select style="padding:12px 16px; border:1px solid #ccc; border-radius:12px; width:100%; font-size:15px; background:white;">
+        <option>All</option>
+        <option>Computer Science</option>
+        <option>Electronics</option>
+        <option>Electrical</option>
+        <option>Civil</option>
+      </select>
+    </div>
+
+    <!-- Sort Filter -->
+    <div style="width:100%;">
+      <select style="padding:12px 16px; border:1px solid #ccc; border-radius:12px; width:100%; font-size:15px; background:white;">
+        <option>Sort by Title</option>
+        <option>Price: Low to High</option>
+        <option>Price: High to Low</option>
+        <option>Highest Rated</option>
+      </select>
+    </div>
+
+  </div>
+</div>
+
+
+    <!-- Book Grid Section -->
+    <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); gap:30px;">
+      <!-- Paste your existing book card components here (already styled and ready) -->
+      <!-- You already provided the full list of books above, so insert those here -->
+
+      <!-- Example card -->
+      <div style="background:white; border:1px solid #ddd; border-radius:20px; overflow:hidden; transition:transform 0.3s, box-shadow 0.3s;" onmouseover="this.style.transform='translateY(-10px)'; this.style.boxShadow='0 10px 20px rgba(0,0,0,0.1)'" onmouseout="this.style.transform=''; this.style.boxShadow=''">
+        <img src="https://images.pexels.com/photos/159711/books-bookstore-book-reading-159711.jpeg?auto=compress&cs=tinysrgb&w=300&h=400&fit=crop" style="width:100%; height:320px; object-fit:cover;" />
+        <div style="padding:20px;">
+          <div style="display:flex; justify-content:space-between; margin-bottom:10px;">
+            <span style="background:black; color:white; padding:5px 12px; border-radius:20px; font-size:12px;">Computer Science</span>
+            <div style="color:black; font-size:14px;">★ 4.9</div>
+          </div>
+          <h3 style="font-size:20px; font-weight:bold; color:black; margin:0 0 5px;">Advanced Algorithms</h3>
+          <p style="color:gray; margin:0 0 20px;">Dr. Sarah Chen</p>
+          <div style="display:flex; justify-content:space-between; align-items:center;">
+            <span style="font-size:22px; font-weight:bold; color:black;">$89.99</span>
+            <button style="background:black; color:white; padding:10px 16px; border-radius:8px; border:none; cursor:pointer;">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+     
+      <!-- Book 1 -->
+      <div style="background: white; border: 1px solid #ddd; border-radius: 20px; overflow: hidden; transition: transform 0.3s, box-shadow 0.3s;" onmouseover="this.style.transform='translateY(-10px)'; this.style.boxShadow='0 10px 20px rgba(0,0,0,0.1)'" onmouseout="this.style.transform=''; this.style.boxShadow=''">
+        <img src="https://images.pexels.com/photos/159711/books-bookstore-book-reading-159711.jpeg?auto=compress&cs=tinysrgb&w=300&h=400&fit=crop" alt="Advanced Algorithms" style="width: 100%; height: 320px; object-fit: cover;">
+        <div style="padding: 20px;">
+          <div style="display: flex; justify-content: space-between; margin-bottom: 10px;">
+            <span style="background: black; color: white; padding: 5px 12px; border-radius: 20px; font-size: 12px;">Computer Science</span>
+            <div style="color: black; display: flex; align-items: center; font-size: 14px;">
+              ★ 4.9
+            </div>
+          </div>
+          <h3 style="font-weight: bold; font-size: 20px; color: black; margin: 0 0 5px;">Advanced Algorithms</h3>
+          <p style="color: gray; margin: 0 0 20px;">Dr. Sarah Chen</p>
+          <div style="display: flex; justify-content: space-between; align-items: center;">
+            <span style="font-size: 22px; font-weight: bold; color: black;">$89.99</span>
+            <button style="background: black; color: white; padding: 10px 16px; border-radius: 8px; border: none; cursor: pointer;">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Book 2 -->
+      <div style="background: white; border: 1px solid #ddd; border-radius: 20px; overflow: hidden; transition: transform 0.3s, box-shadow 0.3s;" onmouseover="this.style.transform='translateY(-10px)'; this.style.boxShadow='0 10px 20px rgba(0,0,0,0.1)'" onmouseout="this.style.transform=''; this.style.boxShadow=''">
+        <img src="https://images.pexels.com/photos/1029141/pexels-photo-1029141.jpeg?auto=compress&cs=tinysrgb&w=300&h=400&fit=crop" alt="Digital Signal Processing" style="width: 100%; height: 320px; object-fit: cover;">
+        <div style="padding: 20px;">
+          <div style="display: flex; justify-content: space-between; margin-bottom: 10px;">
+            <span style="background: black; color: white; padding: 5px 12px; border-radius: 20px; font-size: 12px;">Electronics</span>
+            <div style="color: black; display: flex; align-items: center; font-size: 14px;">
+              ★ 4.8
+            </div>
+          </div>
+          <h3 style="font-weight: bold; font-size: 20px; color: black; margin: 0 0 5px;">Digital Signal Processing</h3>
+          <p style="color: gray; margin: 0 0 20px;">Prof. Michael Rodriguez</p>
+          <div style="display: flex; justify-content: space-between; align-items: center;">
+            <span style="font-size: 22px; font-weight: bold; color: black;">$94.99</span>
+            <button style="background: black; color: white; padding: 10px 16px; border-radius: 8px; border: none; cursor: pointer;">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Book 3 -->
+      <div style="background: white; border: 1px solid #ddd; border-radius: 20px; overflow: hidden; transition: transform 0.3s, box-shadow 0.3s;" onmouseover="this.style.transform='translateY(-10px)'; this.style.boxShadow='0 10px 20px rgba(0,0,0,0.1)'" onmouseout="this.style.transform=''; this.style.boxShadow=''">
+        <img src="https://media.springernature.com/full/springer-static/cover-hires/book/978-981-15-3212-2" alt="Power Systems Analysis" style="width: 100%; height: 320px; object-fit: cover;">
+        <div style="padding: 20px;">
+          <div style="display: flex; justify-content: space-between; margin-bottom: 10px;">
+            <span style="background: black; color: white; padding: 5px 12px; border-radius: 20px; font-size: 12px;">Electrical</span>
+            <div style="color: black; display: flex; align-items: center; font-size: 14px;">
+              ★ 4.7
+            </div>
+          </div>
+          <h3 style="font-weight: bold; font-size: 20px; color: black; margin: 0 0 5px;">Power Systems Analysis</h3>
+          <p style="color: gray; margin: 0 0 20px;">Dr. Emily Johnson</p>
+          <div style="display: flex; justify-content: space-between; align-items: center;">
+            <span style="font-size: 22px; font-weight: bold; color: black;">$76.99</span>
+            <button style="background: black; color: white; padding: 10px 16px; border-radius: 8px; border: none; cursor: pointer;">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+      <!-- Book 1 -->
+      <div style="background: white; border: 1px solid #ddd; border-radius: 20px; overflow: hidden; transition: transform 0.3s, box-shadow 0.3s;" onmouseover="this.style.transform='translateY(-10px)'; this.style.boxShadow='0 10px 20px rgba(0,0,0,0.1)'" onmouseout="this.style.transform=''; this.style.boxShadow=''">
+        <img src="https://m.media-amazon.com/images/I/61CRdeBnfqL._UF1000,1000_QL80_.jpg" alt="Advanced Algorithms" style="width: 100%; height: 320px; object-fit: cover;">
+        <div style="padding: 20px;">
+          <div style="display: flex; justify-content: space-between; margin-bottom: 10px;">
+            <span style="background: black; color: white; padding: 5px 12px; border-radius: 20px; font-size: 12px;">Civil Engineering</span>
+            <div style="color: black; display: flex; align-items: center; font-size: 14px;">
+              ★ 4.9
+            </div>
+          </div>
+          <h3 style="font-weight: bold; font-size: 20px; color: black; margin: 0 0 5px;">Advanced Civil Engineering</h3>
+          <p style="color: gray; margin: 0 0 20px;">Dr. Sarah Chen</p>
+          <div style="display: flex; justify-content: space-between; align-items: center;">
+            <span style="font-size: 22px; font-weight: bold; color: black;">$89.99</span>
+            <button style="background: black; color: white; padding: 10px 16px; border-radius: 8px; border: none; cursor: pointer;">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Book 2 -->
+      
+
+      <!-- Book 3 -->
+      <div style="background: white; border: 1px solid #ddd; border-radius: 20px; overflow: hidden; transition: transform 0.3s, box-shadow 0.3s;" onmouseover="this.style.transform='translateY(-10px)'; this.style.boxShadow='0 10px 20px rgba(0,0,0,0.1)'" onmouseout="this.style.transform=''; this.style.boxShadow=''">
+        <img src="https://media.springernature.com/full/springer-static/cover-hires/book/978-981-15-3212-2" alt="Power Systems Analysis" style="width: 100%; height: 320px; object-fit: cover;">
+        <div style="padding: 20px;">
+          <div style="display: flex; justify-content: space-between; margin-bottom: 10px;">
+            <span style="background: black; color: white; padding: 5px 12px; border-radius: 20px; font-size: 12px;">Electrical</span>
+            <div style="color: black; display: flex; align-items: center; font-size: 14px;">
+              ★ 4.7
+            </div>
+          </div>
+          <h3 style="font-weight: bold; font-size: 20px; color: black; margin: 0 0 5px;">Power Systems Analysis 2</h3>
+          <p style="color: gray; margin: 0 0 20px;">Dr. Emily Johnson</p>
+          <div style="display: flex; justify-content: space-between; align-items: center;">
+            <span style="font-size: 22px; font-weight: bold; color: black;">$76.99</span>
+            <button style="background: black; color: white; padding: 10px 16px; border-radius: 8px; border: none; cursor: pointer;">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+      <div style="background: white; border: 1px solid #ddd; border-radius: 20px; overflow: hidden; transition: transform 0.3s, box-shadow 0.3s;" onmouseover="this.style.transform='translateY(-10px)'; this.style.boxShadow='0 10px 20px rgba(0,0,0,0.1)'" onmouseout="this.style.transform=''; this.style.boxShadow=''">
+        <img src="https://images.pexels.com/photos/159711/books-bookstore-book-reading-159711.jpeg?auto=compress&cs=tinysrgb&w=300&h=400&fit=crop" alt="Advanced Algorithms" style="width: 100%; height: 320px; object-fit: cover;">
+        <div style="padding: 20px;">
+          <div style="display: flex; justify-content: space-between; margin-bottom: 10px;">
+            <span style="background: black; color: white; padding: 5px 12px; border-radius: 20px; font-size: 12px;">Computer Science</span>
+            <div style="color: black; display: flex; align-items: center; font-size: 14px;">
+              ★ 4.9
+            </div>
+          </div>
+          <h3 style="font-weight: bold; font-size: 20px; color: black; margin: 0 0 5px;">Advanced Algorithms</h3>
+          <p style="color: gray; margin: 0 0 20px;">Dr. Sarah Chen</p>
+          <div style="display: flex; justify-content: space-between; align-items: center;">
+            <span style="font-size: 22px; font-weight: bold; color: black;">$89.99</span>
+            <button style="background: black; color: white; padding: 10px 16px; border-radius: 8px; border: none; cursor: pointer;">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Book 2 -->
+      
+  </div>
+  <div style="margin-bottom:40px;display: block;">
+      <h1 style="font-size:32px; font-weight:bold; color:black; margin-bottom:5px;scroll-margin-top:180px" id="computerscience">Computer Science</h1>
+      <p style="font-size:16px; color:gray;">Explore our curated collection of Computer Science Books</p>
+      </div>   
+<div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); gap:30px;">
+
+      <div style="background:white; border:1px solid #ddd; border-radius:20px; overflow:hidden; transition:transform 0.3s, box-shadow 0.3s;" onmouseover="this.style.transform='translateY(-10px)'; this.style.boxShadow='0 10px 20px rgba(0,0,0,0.1)'" onmouseout="this.style.transform=''; this.style.boxShadow=''">
+        <img src="https://images.pexels.com/photos/159711/books-bookstore-book-reading-159711.jpeg?auto=compress&cs=tinysrgb&w=300&h=400&fit=crop" style="width:100%; height:320px; object-fit:cover;" />
+        <div style="padding:20px;">
+          <div style="display:flex; justify-content:space-between; margin-bottom:10px;">
+            <span style="background:black; color:white; padding:5px 12px; border-radius:20px; font-size:12px;">Computer Science</span>
+            <div style="color:black; font-size:14px;">★ 4.9</div>
+          </div>
+          <h3 style="font-size:20px; font-weight:bold; color:black; margin:0 0 5px;">Advanced Algorithms</h3>
+          <p style="color:gray; margin:0 0 20px;">Dr. Sarah Chen</p>
+          <div style="display:flex; justify-content:space-between; align-items:center;">
+            <span style="font-size:22px; font-weight:bold; color:black;">$89.99</span>
+            <button style="background:black; color:white; padding:10px 16px; border-radius:8px; border:none; cursor:pointer;">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+     
+      <!-- Book 1 -->
+      <div style="background: white; border: 1px solid #ddd; border-radius: 20px; overflow: hidden; transition: transform 0.3s, box-shadow 0.3s;" onmouseover="this.style.transform='translateY(-10px)'; this.style.boxShadow='0 10px 20px rgba(0,0,0,0.1)'" onmouseout="this.style.transform=''; this.style.boxShadow=''">
+        <img src="https://images.pexels.com/photos/159711/books-bookstore-book-reading-159711.jpeg?auto=compress&cs=tinysrgb&w=300&h=400&fit=crop" alt="Advanced Algorithms" style="width: 100%; height: 320px; object-fit: cover;">
+        <div style="padding: 20px;">
+          <div style="display: flex; justify-content: space-between; margin-bottom: 10px;">
+            <span style="background: black; color: white; padding: 5px 12px; border-radius: 20px; font-size: 12px;">Computer Science</span>
+            <div style="color: black; display: flex; align-items: center; font-size: 14px;">
+              ★ 4.9
+            </div>
+          </div>
+          <h3 style="font-weight: bold; font-size: 20px; color: black; margin: 0 0 5px;">Advanced Algorithms</h3>
+          <p style="color: gray; margin: 0 0 20px;">Dr. Sarah Chen</p>
+          <div style="display: flex; justify-content: space-between; align-items: center;">
+            <span style="font-size: 22px; font-weight: bold; color: black;">$89.99</span>
+            <button style="background: black; color: white; padding: 10px 16px; border-radius: 8px; border: none; cursor: pointer;">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Book 2 -->
+      <div style="background: white; border: 1px solid #ddd; border-radius: 20px; overflow: hidden; transition: transform 0.3s, box-shadow 0.3s;" onmouseover="this.style.transform='translateY(-10px)'; this.style.boxShadow='0 10px 20px rgba(0,0,0,0.1)'" onmouseout="this.style.transform=''; this.style.boxShadow=''">
+        <img src="https://images.pexels.com/photos/1029141/pexels-photo-1029141.jpeg?auto=compress&cs=tinysrgb&w=300&h=400&fit=crop" alt="Digital Signal Processing" style="width: 100%; height: 320px; object-fit: cover;">
+        <div style="padding: 20px;">
+          <div style="display: flex; justify-content: space-between; margin-bottom: 10px;">
+            <span style="background: black; color: white; padding: 5px 12px; border-radius: 20px; font-size: 12px;">Electronics</span>
+            <div style="color: black; display: flex; align-items: center; font-size: 14px;">
+              ★ 4.8
+            </div>
+          </div>
+          <h3 style="font-weight: bold; font-size: 20px; color: black; margin: 0 0 5px;">Digital Signal Processing</h3>
+          <p style="color: gray; margin: 0 0 20px;">Prof. Michael Rodriguez</p>
+          <div style="display: flex; justify-content: space-between; align-items: center;">
+            <span style="font-size: 22px; font-weight: bold; color: black;">$94.99</span>
+            <button style="background: black; color: white; padding: 10px 16px; border-radius: 8px; border: none; cursor: pointer;">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Book 3 -->
+      <div style="background: white; border: 1px solid #ddd; border-radius: 20px; overflow: hidden; transition: transform 0.3s, box-shadow 0.3s;" onmouseover="this.style.transform='translateY(-10px)'; this.style.boxShadow='0 10px 20px rgba(0,0,0,0.1)'" onmouseout="this.style.transform=''; this.style.boxShadow=''">
+        <img src="https://images.pexels.com/photos/1029141/pexels-photo-1029141.jpeg?auto=compress&cs=tinysrgb&w=300&h=400&fit=crop" alt="Digital Signal Processing" style="width: 100%; height: 320px; object-fit: cover;">
+        <div style="padding: 20px;">
+          <div style="display: flex; justify-content: space-between; margin-bottom: 10px;">
+            <span style="background: black; color: white; padding: 5px 12px; border-radius: 20px; font-size: 12px;">Electronics</span>
+            <div style="color: black; display: flex; align-items: center; font-size: 14px;">
+              ★ 4.8
+            </div>
+          </div>
+          <h3 style="font-weight: bold; font-size: 20px; color: black; margin: 0 0 5px;">Digital Signal Processing</h3>
+          <p style="color: gray; margin: 0 0 20px;">Prof. Michael Rodriguez</p>
+          <div style="display: flex; justify-content: space-between; align-items: center;">
+            <span style="font-size: 22px; font-weight: bold; color: black;">$94.99</span>
+            <button style="background: black; color: white; padding: 10px 16px; border-radius: 8px; border: none; cursor: pointer;">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+      
+      </div>
+  <div style="margin-bottom:40px;display: block;">
+      <h1 style="font-size:32px; font-weight:bold; color:black; margin-bottom:5px;scroll-margin-top:180px" id="electronics">Electronics</h1>
+      <p style="font-size:16px; color:gray;">Explore our curated collection of Electronics Books</p>
+      </div>   
+<div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); gap:30px;">
+
+      <div style="background:white; border:1px solid #ddd; border-radius:20px; overflow:hidden; transition:transform 0.3s, box-shadow 0.3s;" onmouseover="this.style.transform='translateY(-10px)'; this.style.boxShadow='0 10px 20px rgba(0,0,0,0.1)'" onmouseout="this.style.transform=''; this.style.boxShadow=''">
+        <img src="https://images.pexels.com/photos/159711/books-bookstore-book-reading-159711.jpeg?auto=compress&cs=tinysrgb&w=300&h=400&fit=crop" style="width:100%; height:320px; object-fit:cover;" />
+        <div style="padding:20px;">
+          <div style="display:flex; justify-content:space-between; margin-bottom:10px;">
+            <span style="background:black; color:white; padding:5px 12px; border-radius:20px; font-size:12px;">Electronics</span>
+            <div style="color:black; font-size:14px;">★ 4.9</div>
+          </div>
+          <h3 style="font-size:20px; font-weight:bold; color:black; margin:0 0 5px;">Advanced Algorithms</h3>
+          <p style="color:gray; margin:0 0 20px;">Dr. Sarah Chen</p>
+          <div style="display:flex; justify-content:space-between; align-items:center;">
+            <span style="font-size:22px; font-weight:bold; color:black;">$89.99</span>
+            <button style="background:black; color:white; padding:10px 16px; border-radius:8px; border:none; cursor:pointer;">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+     
+      <!-- Book 1 -->
+      <div style="background: white; border: 1px solid #ddd; border-radius: 20px; overflow: hidden; transition: transform 0.3s, box-shadow 0.3s;" onmouseover="this.style.transform='translateY(-10px)'; this.style.boxShadow='0 10px 20px rgba(0,0,0,0.1)'" onmouseout="this.style.transform=''; this.style.boxShadow=''">
+        <img src="https://images.pexels.com/photos/159711/books-bookstore-book-reading-159711.jpeg?auto=compress&cs=tinysrgb&w=300&h=400&fit=crop" alt="Advanced Algorithms" style="width: 100%; height: 320px; object-fit: cover;">
+        <div style="padding: 20px;">
+          <div style="display: flex; justify-content: space-between; margin-bottom: 10px;">
+            <span style="background: black; color: white; padding: 5px 12px; border-radius: 20px; font-size: 12px;">Electronics</span>
+            <div style="color: black; display: flex; align-items: center; font-size: 14px;">
+              ★ 4.9
+            </div>
+          </div>
+          <h3 style="font-weight: bold; font-size: 20px; color: black; margin: 0 0 5px;">Advanced Algorithms</h3>
+          <p style="color: gray; margin: 0 0 20px;">Dr. Sarah Chen</p>
+          <div style="display: flex; justify-content: space-between; align-items: center;">
+            <span style="font-size: 22px; font-weight: bold; color: black;">$89.99</span>
+            <button style="background: black; color: white; padding: 10px 16px; border-radius: 8px; border: none; cursor: pointer;">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Book 2 -->
+      <div style="background: white; border: 1px solid #ddd; border-radius: 20px; overflow: hidden; transition: transform 0.3s, box-shadow 0.3s;" onmouseover="this.style.transform='translateY(-10px)'; this.style.boxShadow='0 10px 20px rgba(0,0,0,0.1)'" onmouseout="this.style.transform=''; this.style.boxShadow=''">
+        <img src="https://images.pexels.com/photos/1029141/pexels-photo-1029141.jpeg?auto=compress&cs=tinysrgb&w=300&h=400&fit=crop" alt="Digital Signal Processing" style="width: 100%; height: 320px; object-fit: cover;">
+        <div style="padding: 20px;">
+          <div style="display: flex; justify-content: space-between; margin-bottom: 10px;">
+            <span style="background: black; color: white; padding: 5px 12px; border-radius: 20px; font-size: 12px;">Electronics</span>
+            <div style="color: black; display: flex; align-items: center; font-size: 14px;">
+              ★ 4.8
+            </div>
+          </div>
+          <h3 style="font-weight: bold; font-size: 20px; color: black; margin: 0 0 5px;">Digital Signal Processing</h3>
+          <p style="color: gray; margin: 0 0 20px;">Prof. Michael Rodriguez</p>
+          <div style="display: flex; justify-content: space-between; align-items: center;">
+            <span style="font-size: 22px; font-weight: bold; color: black;">$94.99</span>
+            <button style="background: black; color: white; padding: 10px 16px; border-radius: 8px; border: none; cursor: pointer;">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Book 3 -->
+      <div style="background: white; border: 1px solid #ddd; border-radius: 20px; overflow: hidden; transition: transform 0.3s, box-shadow 0.3s;" onmouseover="this.style.transform='translateY(-10px)'; this.style.boxShadow='0 10px 20px rgba(0,0,0,0.1)'" onmouseout="this.style.transform=''; this.style.boxShadow=''">
+        <img src="https://images.pexels.com/photos/1029141/pexels-photo-1029141.jpeg?auto=compress&cs=tinysrgb&w=300&h=400&fit=crop" alt="Digital Signal Processing" style="width: 100%; height: 320px; object-fit: cover;">
+        <div style="padding: 20px;">
+          <div style="display: flex; justify-content: space-between; margin-bottom: 10px;">
+            <span style="background: black; color: white; padding: 5px 12px; border-radius: 20px; font-size: 12px;">Electronics</span>
+            <div style="color: black; display: flex; align-items: center; font-size: 14px;">
+              ★ 4.8
+            </div>
+          </div>
+          <h3 style="font-weight: bold; font-size: 20px; color: black; margin: 0 0 5px;">Digital Signal Processing</h3>
+          <p style="color: gray; margin: 0 0 20px;">Prof. Michael Rodriguez</p>
+          <div style="display: flex; justify-content: space-between; align-items: center;">
+            <span style="font-size: 22px; font-weight: bold; color: black;">$94.99</span>
+            <button style="background: black; color: white; padding: 10px 16px; border-radius: 8px; border: none; cursor: pointer;">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+      
+      </div>
+  <div style="margin-bottom:40px;display: block;">
+      <h1 style="font-size:32px; font-weight:bold; color:black; margin-bottom:5px;scroll-margin-top:180px" id="electrical">Electrical</h1>
+      <p style="font-size:16px; color:gray;">Explore our curated collection of Electrical Books</p>
+      </div>   
+<div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); gap:30px;">
+
+      <div style="background:white; border:1px solid #ddd; border-radius:20px; overflow:hidden; transition:transform 0.3s, box-shadow 0.3s;" onmouseover="this.style.transform='translateY(-10px)'; this.style.boxShadow='0 10px 20px rgba(0,0,0,0.1)'" onmouseout="this.style.transform=''; this.style.boxShadow=''">
+        <img src="https://images.pexels.com/photos/159711/books-bookstore-book-reading-159711.jpeg?auto=compress&cs=tinysrgb&w=300&h=400&fit=crop" style="width:100%; height:320px; object-fit:cover;" />
+        <div style="padding:20px;">
+          <div style="display:flex; justify-content:space-between; margin-bottom:10px;">
+            <span style="background:black; color:white; padding:5px 12px; border-radius:20px; font-size:12px;">Electrical</span>
+            <div style="color:black; font-size:14px;">★ 4.9</div>
+          </div>
+          <h3 style="font-size:20px; font-weight:bold; color:black; margin:0 0 5px;">Advanced Algorithms</h3>
+          <p style="color:gray; margin:0 0 20px;">Dr. Sarah Chen</p>
+          <div style="display:flex; justify-content:space-between; align-items:center;">
+            <span style="font-size:22px; font-weight:bold; color:black;">$89.99</span>
+            <button style="background:black; color:white; padding:10px 16px; border-radius:8px; border:none; cursor:pointer;">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+     
+      <!-- Book 1 -->
+      <div style="background: white; border: 1px solid #ddd; border-radius: 20px; overflow: hidden; transition: transform 0.3s, box-shadow 0.3s;" onmouseover="this.style.transform='translateY(-10px)'; this.style.boxShadow='0 10px 20px rgba(0,0,0,0.1)'" onmouseout="this.style.transform=''; this.style.boxShadow=''">
+        <img src="https://images.pexels.com/photos/159711/books-bookstore-book-reading-159711.jpeg?auto=compress&cs=tinysrgb&w=300&h=400&fit=crop" alt="Advanced Algorithms" style="width: 100%; height: 320px; object-fit: cover;">
+        <div style="padding: 20px;">
+          <div style="display: flex; justify-content: space-between; margin-bottom: 10px;">
+            <span style="background: black; color: white; padding: 5px 12px; border-radius: 20px; font-size: 12px;">Electrical</span>
+            <div style="color: black; display: flex; align-items: center; font-size: 14px;">
+              ★ 4.9
+            </div>
+          </div>
+          <h3 style="font-weight: bold; font-size: 20px; color: black; margin: 0 0 5px;">Advanced Algorithms</h3>
+          <p style="color: gray; margin: 0 0 20px;">Dr. Sarah Chen</p>
+          <div style="display: flex; justify-content: space-between; align-items: center;">
+            <span style="font-size: 22px; font-weight: bold; color: black;">$89.99</span>
+            <button style="background: black; color: white; padding: 10px 16px; border-radius: 8px; border: none; cursor: pointer;">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Book 2 -->
+      <div style="background: white; border: 1px solid #ddd; border-radius: 20px; overflow: hidden; transition: transform 0.3s, box-shadow 0.3s;" onmouseover="this.style.transform='translateY(-10px)'; this.style.boxShadow='0 10px 20px rgba(0,0,0,0.1)'" onmouseout="this.style.transform=''; this.style.boxShadow=''">
+        <img src="https://images.pexels.com/photos/1029141/pexels-photo-1029141.jpeg?auto=compress&cs=tinysrgb&w=300&h=400&fit=crop" alt="Digital Signal Processing" style="width: 100%; height: 320px; object-fit: cover;">
+        <div style="padding: 20px;">
+          <div style="display: flex; justify-content: space-between; margin-bottom: 10px;">
+            <span style="background: black; color: white; padding: 5px 12px; border-radius: 20px; font-size: 12px;">Electrical</span>
+            <div style="color: black; display: flex; align-items: center; font-size: 14px;">
+              ★ 4.8
+            </div>
+          </div>
+          <h3 style="font-weight: bold; font-size: 20px; color: black; margin: 0 0 5px;">Digital Signal Processing</h3>
+          <p style="color: gray; margin: 0 0 20px;">Prof. Michael Rodriguez</p>
+          <div style="display: flex; justify-content: space-between; align-items: center;">
+            <span style="font-size: 22px; font-weight: bold; color: black;">$94.99</span>
+            <button style="background: black; color: white; padding: 10px 16px; border-radius: 8px; border: none; cursor: pointer;">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Book 3 -->
+      <div style="background: white; border: 1px solid #ddd; border-radius: 20px; overflow: hidden; transition: transform 0.3s, box-shadow 0.3s;" onmouseover="this.style.transform='translateY(-10px)'; this.style.boxShadow='0 10px 20px rgba(0,0,0,0.1)'" onmouseout="this.style.transform=''; this.style.boxShadow=''">
+        <img src="https://images.pexels.com/photos/1029141/pexels-photo-1029141.jpeg?auto=compress&cs=tinysrgb&w=300&h=400&fit=crop" alt="Digital Signal Processing" style="width: 100%; height: 320px; object-fit: cover;">
+        <div style="padding: 20px;">
+          <div style="display: flex; justify-content: space-between; margin-bottom: 10px;">
+            <span style="background: black; color: white; padding: 5px 12px; border-radius: 20px; font-size: 12px;">Electrical</span>
+            <div style="color: black; display: flex; align-items: center; font-size: 14px;">
+              ★ 4.8
+            </div>
+          </div>
+          <h3 style="font-weight: bold; font-size: 20px; color: black; margin: 0 0 5px;">Digital Signal Processing</h3>
+          <p style="color: gray; margin: 0 0 20px;">Prof. Michael Rodriguez</p>
+          <div style="display: flex; justify-content: space-between; align-items: center;">
+            <span style="font-size: 22px; font-weight: bold; color: black;">$94.99</span>
+            <button style="background: black; color: white; padding: 10px 16px; border-radius: 8px; border: none; cursor: pointer;">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+      
+      </div>
+  <div style="margin-bottom:40px;display: block;">
+
+      <h1 style="font-size:32px; font-weight:bold; color:black; margin-bottom:5px;margin-top: 20px;scroll-margin-top:180px" id="civil">Civil Engineering</h1>
+      <p style="font-size:16px; color:gray;">Explore our curated collection of Civil Engineering Books</p>
+      </div>   
+<div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); gap:30px;">
+
+      <div style="background:white; border:1px solid #ddd; border-radius:20px; overflow:hidden; transition:transform 0.3s, box-shadow 0.3s;" onmouseover="this.style.transform='translateY(-10px)'; this.style.boxShadow='0 10px 20px rgba(0,0,0,0.1)'" onmouseout="this.style.transform=''; this.style.boxShadow=''">
+        <img src="https://images.pexels.com/photos/159711/books-bookstore-book-reading-159711.jpeg?auto=compress&cs=tinysrgb&w=300&h=400&fit=crop" style="width:100%; height:320px; object-fit:cover;" />
+        <div style="padding:20px;">
+          <div style="display:flex; justify-content:space-between; margin-bottom:10px;">
+            <span style="background:black; color:white; padding:5px 12px; border-radius:20px; font-size:12px;">Civil Engineering</span>
+            <div style="color:black; font-size:14px;">★ 4.9</div>
+          </div>
+          <h3 style="font-size:20px; font-weight:bold; color:black; margin:0 0 5px;">Advanced Algorithms</h3>
+          <p style="color:gray; margin:0 0 20px;">Dr. Sarah Chen</p>
+          <div style="display:flex; justify-content:space-between; align-items:center;">
+            <span style="font-size:22px; font-weight:bold; color:black;">$89.99</span>
+            <button style="background:black; color:white; padding:10px 16px; border-radius:8px; border:none; cursor:pointer;">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+     
+      <!-- Book 1 -->
+      <div style="background: white; border: 1px solid #ddd; border-radius: 20px; overflow: hidden; transition: transform 0.3s, box-shadow 0.3s;" onmouseover="this.style.transform='translateY(-10px)'; this.style.boxShadow='0 10px 20px rgba(0,0,0,0.1)'" onmouseout="this.style.transform=''; this.style.boxShadow=''">
+        <img src="https://images.pexels.com/photos/159711/books-bookstore-book-reading-159711.jpeg?auto=compress&cs=tinysrgb&w=300&h=400&fit=crop" alt="Advanced Algorithms" style="width: 100%; height: 320px; object-fit: cover;">
+        <div style="padding: 20px;">
+          <div style="display: flex; justify-content: space-between; margin-bottom: 10px;">
+            <span style="background: black; color: white; padding: 5px 12px; border-radius: 20px; font-size: 12px;">Civil Engineering</span>
+            <div style="color: black; display: flex; align-items: center; font-size: 14px;">
+              ★ 4.9
+            </div>
+          </div>
+          <h3 style="font-weight: bold; font-size: 20px; color: black; margin: 0 0 5px;">Advanced Algorithms</h3>
+          <p style="color: gray; margin: 0 0 20px;">Dr. Sarah Chen</p>
+          <div style="display: flex; justify-content: space-between; align-items: center;">
+            <span style="font-size: 22px; font-weight: bold; color: black;">$89.99</span>
+            <button style="background: black; color: white; padding: 10px 16px; border-radius: 8px; border: none; cursor: pointer;">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Book 2 -->
+      <div style="background: white; border: 1px solid #ddd; border-radius: 20px; overflow: hidden; transition: transform 0.3s, box-shadow 0.3s;" onmouseover="this.style.transform='translateY(-10px)'; this.style.boxShadow='0 10px 20px rgba(0,0,0,0.1)'" onmouseout="this.style.transform=''; this.style.boxShadow=''">
+        <img src="https://images.pexels.com/photos/1029141/pexels-photo-1029141.jpeg?auto=compress&cs=tinysrgb&w=300&h=400&fit=crop" alt="Digital Signal Processing" style="width: 100%; height: 320px; object-fit: cover;">
+        <div style="padding: 20px;">
+          <div style="display: flex; justify-content: space-between; margin-bottom: 10px;">
+            <span style="background: black; color: white; padding: 5px 12px; border-radius: 20px; font-size: 12px;">Civil Engineering</span>
+            <div style="color: black; display: flex; align-items: center; font-size: 14px;">
+              ★ 4.8
+            </div>
+          </div>
+          <h3 style="font-weight: bold; font-size: 20px; color: black; margin: 0 0 5px;">Digital Signal Processing</h3>
+          <p style="color: gray; margin: 0 0 20px;">Prof. Michael Rodriguez</p>
+          <div style="display: flex; justify-content: space-between; align-items: center;">
+            <span style="font-size: 22px; font-weight: bold; color: black;">$94.99</span>
+            <button style="background: black; color: white; padding: 10px 16px; border-radius: 8px; border: none; cursor: pointer;">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Book 3 -->
+      <div style="background: white; border: 1px solid #ddd; border-radius: 20px; overflow: hidden; transition: transform 0.3s, box-shadow 0.3s;" onmouseover="this.style.transform='translateY(-10px)'; this.style.boxShadow='0 10px 20px rgba(0,0,0,0.1)'" onmouseout="this.style.transform=''; this.style.boxShadow=''">
+        <img src="https://images.pexels.com/photos/1029141/pexels-photo-1029141.jpeg?auto=compress&cs=tinysrgb&w=300&h=400&fit=crop" alt="Digital Signal Processing" style="width: 100%; height: 320px; object-fit: cover;">
+        <div style="padding: 20px;">
+          <div style="display: flex; justify-content: space-between; margin-bottom: 10px;">
+            <span style="background: black; color: white; padding: 5px 12px; border-radius: 20px; font-size: 12px;">Civil Engineering</span>
+            <div style="color: black; display: flex; align-items: center; font-size: 14px;">
+              ★ 4.8
+            </div>
+          </div>
+          <h3 style="font-weight: bold; font-size: 20px; color: black; margin: 0 0 5px;">Digital Signal Processing</h3>
+          <p style="color: gray; margin: 0 0 20px;">Prof. Michael Rodriguez</p>
+          <div style="display: flex; justify-content: space-between; align-items: center;">
+            <span style="font-size: 22px; font-weight: bold; color: black;">$94.99</span>
+            <button style="background: black; color: white; padding: 10px 16px; border-radius: 8px; border: none; cursor: pointer;">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+      
+      </div>
+  
+
+  </main>
+  
+</div>
+
+</body>
+</html>

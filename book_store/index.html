@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>BookHaven - Premium Books Collection</title>
+    <style>
+@keyframes fadeCycle {
+  0% { opacity: 1; transform: translateY(0); }
+
+  50% { opacity: 0; transform: translateY(0); }
+  
+  100% { opacity: 1; transform: translateY(0); }
+}
+.fade-animate {
+  animation: fadeCycle 2s ease-in-out infinite;
+  display: inline-block;
+}
+.card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+</style>
+
+</head>
+<body style="margin:0; font-family:sans-serif; color:#000; background-color:#fff;">
+
+  <!-- Navbar -->
+  <nav style="position:fixed; top:0; width:96%; background-color:white; padding:20px 40px; box-shadow:0 2px 10px rgba(0,0,0,0.05); z-index:999;">
+    <div style="display:flex; justify-content:space-between; align-items:center;">
+      <div style="display:flex; align-items:center; gap:10px;">
+        <div style="padding:1px;  border-radius:10px;">
+          <span style="color:white; font-size:40px;"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAJ0AAACUCAMAAAC+99ssAAAAY1BMVEX///8AAAD+/v7h4eHJycm1tbV8fHyIiIgXFxe5ubn7+/v4+Pjz8/MeHh7p6enU1NTCwsJgYGAtLS2amppQUFA8PDxERERubm6rq6sICAgjIyPb29sRERGTk5NYWFikpKQ1NTVDmhL0AAAG3klEQVR4nO2b6ZarKhBGLUVQUMQJjfP7P+UBxHTSGczUNz8u3zrrdAYoNkUxJFQ8z8nJycnJycnJycnJycnJycnJ6fvylU7+UOq/ZMUzte1D6r9k5JpdmgRBwKl94r9kWFWiqwXKlbXktS5eEfXEUhTL1OCYJ29ZSniMm0kbQ96n6DwvBEIwzosUoCIoYObFR8yvg6n/ZwEiFUBa5BgTAu3H2HxFx00DfVhOAEU+B3qoqLc7xr4NUz7nnepZGfamaxzCj/lO0wWbr3yKximCpQ18fz8CdREahAVEU4nYZs4L/oBOxbV2mFI2NwA4fmh0YwzQzJmqbVBNjz5Pd26NBSSCKlTu0CNHL+toEFUsrCAiNlB/7P01nVLSSqhFovCurA4m3JK4BtleTPO/pzOu4bGECXnXVlYdAmiCOuaa9E/ojgbiS9+ZKPS8WQLmevb+es/3OYZ6XufF76qKLn6XTSsR7dyWM742sqs4AamaOh1cM3XUoBJ+vYqma+ZynlvxzuLewAEO3SJlcZNOcWSKg53Fnk8ZgTrzrsyWja6QcukOMEDzKhwFGQrUqw326qwwDTEVfwmBqj9rva+AqOmi3r1FF6rttkcilofrPXiALsL20ZW4O7ak/lExFMhbd3k9W1AxCHsYuUW3xR2O3qW7saIcG1NR30vtDd0Q1Z6WvXdnHzmds39OZ5b/QNoGdWEZePd2uXfp/HV/V3Rbg3fo1v2NYijNsxkwNVvFHevBsSs4Wp3/zOpn1lfewmN0q9ikgomqEJ3YTskzOmi5XYMelk95OEEKD43spiSPkIeifHcNOxtZ6GAK+VPHbTarLb7Mumd8p5ydFqhI+W7JM991WakOCu0zvmO5zJQL0ufovGxIh2y/4BldqpyeyXwvGk5F89F7eM6eaH7oRH45Z8f8qZmb45fo4od290s6kj8Ud+sqxbKKvEQXvkpXZWxt/m5FvdwHpTqW/8d06nBfBrt0jGXNAPAFOoChydj9yeEjVexw+AKdbhTQTiOa7ku+03Q7NR2do3N0js7ROTpH5+gcnaNzdI7O0Tk6R+foHJ2j+z7dPcpv0ZmLYP3F6d1rmbt0lJobJ02l81Hoh+j0rWEpMsbsN8+3U5ju0G15WZSxTJQf9Z1YX6zJLPp7Nwv3R5b2Yib1akp8xHfrTSbrsyyLcV4AdFOD9E2Yvlj06S/UCzqTs2BiIUHNlAIsOY6VrZ75683p+3Q/39P7SU8a1fuq7ZlJOfk1xpe+Mx2gfVspzzek/7nhW3N7PjCy56IctQukTaujcI9Ov0/bRudNIX4tXN+i46jEq8iIgoAzm+AXlAt0RCcM+qd37Cd09kqYctLBUga2HuNBgEZibZaI4+FlOnOvAl1VVbIwD9OGxMg2JHSiVrbmMm54P3Q23jKdoiVsDRSTJjV2Cqlsdubhy77zwlEEnPNES/1F8ygPw1A3Idd+YQGGAXPvJp2nPAOY6wigPGzqYYBqnNGJxUCMrf8q3abTgAlarCK8mjPdZz4ClIl3lc5LSjiMehWn2ayr4Lb3N3O/EgFeo/Nt+oJNnrPrKe9nCVE+6wnYNya9w+aRrXRrkl0vodE4SZtHIOd+zWr1N9n7TP8NutXEeY7TipjoFEuz8olKJzxRM182OmbSo4RZ5XRCZXJM09jMeCYvc1su3xpZjyWb6GZdNTweII8TL8FQ2ft2S+d7WaUCzmNhrgYXJVfsnF8mvjiyjHNBcL50qVU9mYVgXVp0fmDaJh4qID7S6eGKoUDq3dTmBqqFhGdqaZrqzUyn9gwSKzOvjOzB0CXxuF7WXlGDZ6EjPmygmBOeQ0nNWUanpNASJs7mAppQleBixs0NK0MzxomhOzxFN3pxI2/Y3FRXRKgTxwRFmDSqP771HYEmCQuY1KlGkKresSKb2BufpFu6HaPWHkxtH+sZUAJmho5hGEUNJO7b6azkbRXLU3RPqctJKyMyAzY5FRhmMsiQ5Lv9u9Qf0Ckd6gG6FMp4iEeIOvV8118fpEuLYllklRtVsl6KpfgNCNqLadPB5VAWqnotp636shRF+j5dlEqZt0JkCdOiVuZJEiAh4nKSsk6jy5k9RGkt5VTGQqDgWvVMiDaXMo2epLM9l2pdy3ZKG7EMCXUo+nFmoY5bAmUPpTZlaMTy6P0HfadmIn8oNckm9qlNiQfqLFioLgV8PTP7e8kvVmrf3mb3A3QRntnW8t4vSPz1RzDHj2nrTn98bQ/v52jBZhzt08Uw9tQectaWduXbD7q3X7jLt1Wh/bj3Wd3XP4352A+CnpFuNAnut7x+Wv8Onb/b8vop4dUU4He0NvwNvzg5OTk5OTk5OTk5OTk5OTk5/a/1DzJ8aUqewfxOAAAAAElFTkSuQmCC" height="40px" width="40px"></span>
+        </div>
+        <div>
+          <h1 style="margin:0; font-size:24px;">BookHaven</h1>
+          <p style="margin:0; font-size:14px; color:gray;">Premium Collection</p>
+        </div>
+      </div>
+      <div style="display:flex; gap:40px; align-items:center;">
+        <a href="#home" style="text-decoration:none; color:black; font-weight:500;">Home</a>
+        <a href="#features" style="text-decoration:none; color:black; font-weight:500;">Features</a>
+        <a href="#about" style="text-decoration:none; color:black; font-weight:500;">About</a>
+        <a href="#contact" style="text-decoration:none; color:black; font-weight:500;">Contact</a>
+        <a href="home.html" style="padding:10px 20px; background:black; color:white; border-radius:8px; text-decoration:none; font-weight:500;">Enter Store</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section id="home" style="padding:160px 40px 100px 40px;">
+    <div style="display:flex; flex-wrap:wrap; gap:40px;">
+      <div style="flex:1; min-width:300px;">
+        <h1 style="font-size:48px; font-weight:bold; line-height:1.2; margin-bottom:30px;">
+     <span style="color:black;">Premium</span><br>
+     <span class="fade-animate" style="color:gray;">Books</span><br>
+     <span  style="color:black;">Collection</span>
+     </h1>
+        <p style="font-size:18px; color:gray; max-width:500px;">
+          Discover thousands of carefully curated academic and professional books. Your gateway to knowledge and excellence in a minimalist, elegant experience.
+        </p>
+        <div style="margin-top:30px; display:flex; gap:20px; flex-wrap:wrap;">
+          <a href="home.html" style="padding:14px 28px; background:black; color:white; border-radius:10px; text-decoration:none; font-weight:600;">Explore Collection →</a>
+
+        </div>
+      </div>
+      <div style="flex:1; min-width:300px;">
+       <div style="display:grid; grid-template-columns:1fr 1fr; gap:20px;">
+  <div class="card" style="padding:20px; background:#f3f3f3; border-radius:20px;">
+    <div style="width:48px; height:48px; background:black; border-radius:10px; display:flex; align-items:center; justify-content:center; color:white; margin-bottom:10px;">📘</div>
+    <h3 style="margin:0;">Academic</h3>
+    <p style="color:gray;">Professional textbooks and research materials</p>
+  </div>
+  
+  <div class="card" style="padding:20px; background:black; color:white; border-radius:20px;">
+    <div style="width:48px; height:48px; background:white; color:black; border-radius:10px; display:flex; align-items:center; justify-content:center; margin-bottom:10px;">⭐</div>
+    <h3 style="margin:0;">Premium</h3>
+    <p style="color:lightgray;">Highest quality publications</p>
+  </div>
+  
+  <div class="card" style="padding:20px; background:#222; color:white; border-radius:20px;">
+    <div style="width:48px; height:48px; background:white; color:black; border-radius:10px; display:flex; align-items:center; justify-content:center; margin-bottom:10px;">👥</div>
+    <h3 style="margin:0;">Community</h3>
+    <p style="color:lightgray;">Join thousands of learners</p>
+  </div>
+  
+  <div class="card" style="padding:20px; background:#e5e5e5; border-radius:20px;">
+    <div style="width:48px; height:48px; background:black; color:white; border-radius:10px; display:flex; align-items:center; justify-content:center; margin-bottom:10px;">🏅</div>
+    <h3 style="margin:0;">Certified</h3>
+    <p style="color:gray;">Verified and authenticated content</p>
+  </div>
+</div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats Section -->
+  <section style="background:#fafafa; padding:80px 40px;">
+    <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(180px,1fr)); gap:30px; text-align:center;">
+      <div><div style="font-size:36px; font-weight:bold;">3,000+</div><p style="color:gray;">Premium Books</p></div>
+      <div><div style="font-size:36px; font-weight:bold;">50K+</div><p style="color:gray;">Happy Students</p></div>
+      <div><div style="font-size:36px; font-weight:bold;">4.9</div><p style="color:gray;">Average Rating</p></div>
+      <div><div style="font-size:36px; font-weight:bold;">24/7</div><p style="color:gray;">Support</p></div>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section id="features" style="padding:80px 40px;">
+    <div style="text-align:center; margin-bottom:60px;">
+      <h2 style="font-size:36px; font-weight:bold;">Why Choose BookHaven</h2>
+      <p style="font-size:18px; color:gray; max-width:700px; margin:auto;">
+        Experience the finest collection of academic and professional literature, curated for excellence and delivered with unmatched quality.
+      </p>
+    </div>
+    <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:30px;">
+      <div style="text-align:center; padding:30px; border-radius:20px; background:#f9f9f9;">
+        <div style="width:60px; height:60px; background:black; color:white; border-radius:15px; display:flex; align-items:center; justify-content:center; margin:auto;">📘</div>
+        <h3 style="margin:20px 0 10px 0;">Premium Collection</h3>
+        <p style="color:gray;">Curated academic & professional books</p>
+      </div>
+      <div style="text-align:center; padding:30px; border-radius:20px; background:#f9f9f9;">
+        <div style="width:60px; height:60px; background:black; color:white; border-radius:15px; display:flex; align-items:center; justify-content:center; margin:auto;">👥</div>
+        <h3 style="margin:20px 0 10px 0;">Expert Authors</h3>
+        <p style="color:gray;">Books by industry leaders & academics</p>
+      </div>
+      <div style="text-align:center; padding:30px; border-radius:20px; background:#f9f9f9;">
+        <div style="width:60px; height:60px; background:black; color:white; border-radius:15px; display:flex; align-items:center; justify-content:center; margin:auto;">🏅</div>
+        <h3 style="margin:20px 0 10px 0;">Quality Assured</h3>
+        <p style="color:gray;">Carefully selected content</p>
+      </div>
+      <div style="text-align:center; padding:30px; border-radius:20px; background:#f9f9f9;">
+        <div style="width:60px; height:60px; background:black; color:white; border-radius:15px; display:flex; align-items:center; justify-content:center; margin:auto;">⭐</div>
+        <h3 style="margin:20px 0 10px 0;">Top Rated</h3>
+        <p style="color:gray;">4.9/5 customer satisfaction</p>
+      </div>
+    </div>
+  </section>
+  <!-- About Section -->
+<section id="about" style="padding:80px 40px; background:#fff;">
+  <div style="max-width:900px; margin:auto; text-align:center;">
+    <h2 style="font-size:36px; font-weight:bold; margin-bottom:20px;">About BookHaven</h2>
+    <p style="font-size:18px; color:gray; line-height:1.6;">
+      BookHaven is a premium digital book platform dedicated to academic and professional excellence.
+      We aim to empower students, educators, and lifelong learners by providing carefully curated
+      resources across a variety of domains. Whether you're pursuing higher education or looking to
+      upskill in your career, BookHaven is your reliable companion for quality reading materials.
+    </p>
+  </div>
+</section>
+
+
+  <!-- CTA Section -->
+  <section style="background:black; color:white; padding:80px 40px; text-align:center;">
+    <h2 style="font-size:36px; font-weight:bold;">Ready to Start Learning?</h2>
+    <p style="font-size:18px; color:lightgray; max-width:600px; margin:auto; margin-top:20px;">
+      Join thousands of students and professionals who trust BookHaven for their educational and career advancement needs.
+    </p>
+    <div style="margin-top:30px; display:flex; justify-content:center; gap:20px; flex-wrap:wrap;">
+      <a onclick="window.location.href='catalogue.html'" style="padding:14px 28px; background:white; color:black; border-radius:10px; text-decoration:none; font-weight:600;">Browse Collection</a>
+      <a onclick="window.location.href='register.html'" style="padding:14px 28px; border:2px solid white; color:white; border-radius:10px; text-decoration:none; font-weight:600;">Create Account</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer style="background:#f9f9f9; padding:60px 40px; border-top:1px solid #ddd;">
+    <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:30px;">
+      <div>
+        <div style="display:flex; gap:10px; align-items:center;">
+          <div style="padding:1px;  border-radius:10px;">
+            <span style="color:white; font-size:40px;"><img src="data:image/png;base64,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" height="40px" width="40px"></span>
+          </div>
+          <div>
+            <h3 style="margin:0;">BookHaven</h3>
+            <p style="margin:0; color:gray;">Premium Collection</p>
+          </div>
+        </div>
+        <p style="color:gray; margin-top:10px;">Your trusted source for academic and professional literature.</p>
+      </div>
+      <div>
+        <h4 style="margin-bottom:10px;">Quick Links</h4>
+        <a href="#home" style="display:block; color:gray; text-decoration:none;">Home</a>
+        <a href="#features" style="display:block; color:gray; text-decoration:none;">Features</a>
+        <a href="#store" style="display:block; color:gray; text-decoration:none;">Store</a>
+      </div>
+      <div>
+        <h4 style="margin-bottom:10px;">Categories</h4>
+        <p style="color:gray;">Computer Science</p>
+        <p style="color:gray;">Electronics</p>
+        <p style="color:gray;">Electrical</p>
+        <p style="color:gray;">Civil Engineering</p>
+      </div>
+      <div id="contact">
+        <h4 style="margin-bottom:10px;">Contact</h4>
+        <p style="color:gray;">support@bookhaven.com</p>
+        <p style="color:gray;">+1 (555) 123-4567</p>
+        <p style="color:gray;">Available 24/7</p>
+      </div>
+    </div>
+    <div style="text-align:center; margin-top:40px; color:gray;">
+      &copy; 2025 BookHaven. All rights reserved.
+    </div>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>BookHaven Enhanced Checkout</title>
+</head>
+<body style="margin:0; font-family:Arial, sans-serif; background:#f9f9f9;">
+
+  <!-- Header -->
+  <nav style="position:fixed; top:0; width:96%; background-color:white; padding:20px 40px; box-shadow:0 2px 10px rgba(0,0,0,0.05); z-index:999;">
+    <div style="display:flex; justify-content:space-between; align-items:center;">
+      <div style="display:flex; align-items:center; gap:10px;">
+        <div style="padding:1px; border-radius:10px;">
+          <span><img src="data:image/png;base64,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" height="40px" width="40px" /></span>
+        </div>
+        <div>
+          <h1 style="margin:0; font-size:24px;">BookHaven</h1>
+          <p style="margin:0; font-size:14px; color:gray;">Premium Collection</p>
+        </div>
+      </div>
+      <div style="display:flex; gap:40px; align-items:center;">
+        <a href="home.html" style="text-decoration:none; color:black; font-weight:500;">Home</a>
+        <a href="catalogue.html" style="text-decoration:none; color:black; font-weight:500;">Catalogue</a>
+        <a href="cart.html" style="text-decoration:none; color:black; font-weight:500;">Cart</a>
+        <a href="login.html" style="text-decoration:none; color:black; font-weight:500;">Login</a>
+        <a href="register.html" style="padding:10px 20px; background:black; color:white; border-radius:8px; text-decoration:none; font-weight:500;">Register</a>
+      </div>
+    </div>
+  </nav>
+  <!-- Checkout Form -->
+  <div style="padding-top:200px; padding:40px;margin:0 30%">
+    <br style="padding: 100px;">
+    <h2 style="font-size:32px; margin-bottom:24px;margin-top:50px">Enhanced Checkout Form</h2>
+
+    <form style="max-width:800px; background:white; padding:32px; border-radius:16px; border:1px solid #e5e7eb;" onsubmit="return confirm('Order Submitted!');">
+      
+      <!-- Hidden Field -->
+      <input type="hidden" name="form_id" value="checkout_001"/>
+
+      <!-- Basic Info -->
+      <div style="margin-bottom:24px;">
+        <label>Full Name*</label><br/>
+        <input type="text" required placeholder="Your Name" style="width:100%; padding:12px; border:1px solid #ccc; border-radius:8px; margin-top:8px;" />
+      </div>
+
+      <div style="margin-bottom:24px;">
+        <label>Email Address*</label><br/>
+        <input type="email" required placeholder="you@example.com" style="width:100%; padding:12px; border:1px solid #ccc; border-radius:8px; margin-top:8px;" />
+      </div>
+
+      <div style="margin-bottom:24px;">
+        <label>Password*</label><br/>
+        <input type="password" required minlength="8" required placeholder="Create a password" style="width:100%; padding:12px; border:1px solid #ccc; border-radius:8px; margin-top:8px;" />
+      </div>
+
+      <div style="margin-bottom:24px;">
+        <label>Phone Number*</label><br/>
+        <input type="tel" required placeholder="+91-9876543210" style="width:100%; padding:12px; border:1px solid #ccc; border-radius:8px; margin-top:8px;" />
+      </div>
+
+      <!-- Address -->
+      <div style="margin-bottom:24px;">
+        <label>Address*</label><br/>
+        <textarea required placeholder="Enter your full address" style="width:100%; padding:12px; border:1px solid #ccc; border-radius:8px; margin-top:8px;" rows="3"></textarea>
+      </div>
+
+      <!-- Country Select -->
+      <div style="margin-bottom:24px;">
+        <label>Country*</label><br/>
+        <select required style="width:100%; padding:12px; border:1px solid #ccc; border-radius:8px; margin-top:8px;">
+          <option value="">-- Select Country --</option>
+          <option>India</option>
+          <option>USA</option>
+          <option>Canada</option>
+          <option>Germany</option>
+          <option>Australia</option>
+        </select>
+      </div>
+
+      <!-- Date & Time -->
+      <div style="display:flex; gap:24px; margin-bottom:24px;">
+        <div style="flex:1;">
+          <label>Preferred Delivery Date*</label><br/>
+          <input type="date" required style="width:100%; padding:12px; border:1px solid #ccc; border-radius:8px; margin-top:8px;" />
+        </div>
+        <div style="flex:1;">
+          <label>Preferred Delivery Time*</label><br/>
+          <input type="time" required style="width:100%; padding:12px; border:1px solid #ccc; border-radius:8px; margin-top:8px;" />
+        </div>
+      </div>
+
+      <!-- File Upload -->
+      <div style="margin-bottom:24px;">
+        <label>Upload ID Proof (PDF/JPG)*</label><br/>
+        <input type="file" accept=".pdf,.jpg,.jpeg,.png" required style="margin-top:8px;" />
+      </div>
+
+      <!-- URL -->
+      <div style="margin-bottom:24px;">
+        <label>Your Website (if any)</label><br/>
+        <input type="url" placeholder="https://yourwebsite.com" style="width:100%; padding:12px; border:1px solid #ccc; border-radius:8px; margin-top:8px;" />
+      </div>
+
+      <!-- Color Picker & Range -->
+      <div style="display:flex; gap:24px; margin-bottom:24px;">
+        <div style="flex:1;">
+          <label>Choose Gift Wrap Color</label><br/>
+          <input type="color" style="width:100%; height:44px; padding:4px; border:1px solid #ccc; border-radius:8px; margin-top:8px;" />
+        </div>
+        <div style="flex:1;">
+          <label>Gift Priority Level</label><br/>
+          <input type="range" min="1" max="10" style="width:100%; margin-top:12px;" />
+        </div>
+      </div>
+
+      <!-- Payment Radio -->
+      <div style="margin-bottom:24px;">
+        <label>Payment Method*</label><br/>
+        <div style="margin-top:8px;">
+          <input type="radio" name="payment" required /> Credit Card<br/>
+          <input type="radio" name="payment" required /> UPI<br/>
+          <input type="radio" name="payment" required /> Pay on Delivery
+        </div>
+      </div>
+
+      <!-- Additional Options -->
+      <div style="margin-bottom:24px;">
+        <label>Additional Services</label><br/>
+        <div style="margin-top:8px;">
+          <input type="checkbox" name="service" /> Gift Packaging<br/>
+          <input type="checkbox" name="service" /> Same Day Delivery<br/>
+          <input type="checkbox" name="service" /> Include Bookmark
+        </div>
+      </div>
+
+      <!-- Submit -->
+      <button type="submit" style="width:100%; background:black; color:white; padding:16px; border:none; border-radius:12px; font-weight:bold; cursor:pointer;" onclick="window.location.href='home.html'">Confirm Order</button>
+    </form>
+  </div>
+
+</body>
+</html>
