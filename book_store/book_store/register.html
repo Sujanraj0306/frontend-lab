@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BookHaven - Register</title>
+  <link rel="stylesheet" href="css/styles.css" />
+  <style>
+    body {
+      background-image: url('https://images.unsplash.com/photo-1512820790803-83c3c1c1c1c1');
+      background-size: cover;
+      color: #333;
+      font-family: 'Arial', sans-serif;
+    }
+    .container {
+      max-width: 600px;
+      margin: auto;
+      background: rgba(255, 255, 255, 0.9);
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+    h1 {
+      text-align: center;
+      font-size: 28px;
+      margin-bottom: 20px;
+    }
+    .form-group {
+      margin-bottom: 15px;
+    }
+    .form-group label {
+      display: block;
+      margin-bottom: 5px;
+    }
+    .form-group input {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    .btn {
+      display: inline-block;
+      padding: 10px 20px;
+      background: black;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      text-align: center;
+      transition: background 0.3s;
+    }
+    .btn:hover {
+      background: #333;
+    }
+    .alert {
+      display: none;
+      padding: 10px;
+      margin: 10px 0;
+      border: 1px solid transparent;
+      border-radius: 5px;
+    }
+    .alert-success {
+      color: green;
+      border-color: green;
+    }
+    .alert-error {
+      color: red;
+      border-color: red;
+    }
+  </style>
+</head>
+<body>
+  <nav style="position:fixed; top:0; width:100%; background-color:white; padding:20px 40px; box-shadow:0 2px 10px rgba(0,0,0,0.05); z-index:999;">
+    <div style="display:flex; justify-content:space-between; align-items:center;">
+      <div style="display:flex; align-items:center; gap:10px;">
+        <h1 style="margin:0; font-size:24px;">BookHaven</h1>
+      </div>
+      <div style="display:flex; gap:40px; align-items:center;">
+        <a href="home.html" style="text-decoration:none; color:black; font-weight:500;">Home</a>
+        <a href="catalogue.html" style="text-decoration:none; color:black; font-weight:500;">Catalogue</a>
+        <a href="cart.html" style="text-decoration:none; color:black; font-weight:500;"> Cart</a>
+        <a href="login.html" style="text-decoration:none; color:black; font-weight:500;">Login</a>
+        <a href="register.html" style="padding:10px 20px; background:black; color:white; border-radius:8px; text-decoration:none; font-weight:500;">Register</a>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container" style="margin-top: 80px;">
+    <h1>Create an Account</h1>
+    <div class="alert alert-success" id="success-alert">Registration successful!</div>
+    <div class="alert alert-error" id="error-alert">Registration failed. Please try again.</div>
+    <form id="registration-form">
+      <div class="form-group">
+        <label for="username">Username</label>
+        <input type="text" id="username" name="username" required />
+      </div>
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" required />
+      </div>
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" required />
+      </div>
+      <button type="submit" class="btn">Register</button>
+      <button type="button" class="btn" id="loading-btn" style="display:none;">Loading...</button>
+    </form>
+  </div>
+
+  <script src="js/main.js"></script>
+  <script>
+    document.getElementById('registration-form').addEventListener('submit', function(event) {
+      event.preventDefault();
+      document.getElementById('loading-btn').style.display = 'inline-block';
+      this.style.display = 'none';
+
+      // Simulate a registration process
+      setTimeout(() => {
+        const success = Math.random() > 0.5; // Random success or failure
+        document.getElementById('loading-btn').style.display = 'none';
+        if (success) {
+          document.getElementById('success-alert').style.display = 'block';
+        } else {
+          document.getElementById('error-alert').style.display = 'block';
+        }
+      }, 2000);
+    });
+  </script>
+</body>
+</html>

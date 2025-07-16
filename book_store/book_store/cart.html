@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BookHaven - Cart</title>
+  <link rel="stylesheet" href="css/styles.css" />
+  <style>
+    body {
+      background-image: url('https://images.pexels.com/photos/159711/books-bookstore-book-reading-159711.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260');
+      background-size: cover;
+      color: #333;
+      font-family: 'Arial', sans-serif;
+    }
+    .container {
+      max-width: 1200px;
+      margin: auto;
+      padding: 20px;
+      background: rgba(255, 255, 255, 0.9);
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+    h1 {
+      font-size: 36px;
+      margin-bottom: 20px;
+    }
+    .cart-item {
+      display: flex;
+      justify-content: space-between;
+      padding: 15px;
+      border-bottom: 1px solid #ddd;
+    }
+    .cart-item:last-child {
+      border-bottom: none;
+    }
+    .btn {
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    .btn-alert {
+      background: red;
+      color: white;
+    }
+    .btn-alert:hover {
+      background: darkred;
+    }
+    .btn-loading {
+      background: blue;
+      color: white;
+    }
+    .btn-loading:hover {
+      background: darkblue;
+    }
+  </style>
+</head>
+<body>
+  <nav style="position:fixed; top:0; width:100%; background-color:white; padding:20px 40px; box-shadow:0 2px 10px rgba(0,0,0,0.05); z-index:999;">
+    <div style="display:flex; justify-content:space-between; align-items:center;">
+      <div style="display:flex; align-items:center; gap:10px;">
+        <h1 style="margin:0; font-size:24px;">BookHaven</h1>
+      </div>
+      <div style="display:flex; gap:40px; align-items:center;">
+        <a href="home.html" style="text-decoration:none; color:black; font-weight:500;">Home</a>
+        <a href="catalogue.html" style="text-decoration:none; color:black; font-weight:500;">Catalogue</a>
+        <a href="cart.html" style="text-decoration:none; color:black; font-weight:500;">Cart</a>
+        <a href="login.html" style="text-decoration:none; color:black; font-weight:500;">Login</a>
+        <a href="register.html" style="padding:10px 20px; background:black; color:white; border-radius:8px; text-decoration:none; font-weight:500;">Register</a>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container" style="margin-top: 80px;">
+    <h1>Your Shopping Cart</h1>
+    <div class="cart-item">
+      <div>Book Title 1</div>
+      <div>
+        <button class="btn btn-alert">Remove</button>
+        <button class="btn btn-loading">Loading...</button>
+      </div>
+    </div>
+    <div class="cart-item">
+      <div>Book Title 2</div>
+      <div>
+        <button class="btn btn-alert">Remove</button>
+        <button class="btn btn-loading">Loading...</button>
+      </div>
+    </div>
+    <div class="cart-item">
+      <div>Book Title 3</div>
+      <div>
+        <button class="btn btn-alert">Remove</button>
+        <button class="btn btn-loading">Loading...</button>
+      </div>
+    </div>
+    <div style="text-align: right; margin-top: 20px;">
+      <button class="btn btn-loading">Proceed to Checkout</button>
+    </div>
+  </div>
+</body>
+</html>

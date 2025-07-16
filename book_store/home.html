@@ -182,120 +182,136 @@
 </div>
 
 
-    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px;">
-      <!-- Book 1 -->
-      <div style="background: white; border: 1px solid #ddd; border-radius: 20px; overflow: hidden; transition: transform 0.3s, box-shadow 0.3s;" onmouseover="this.style.transform='translateY(-10px)'; this.style.boxShadow='0 10px 20px rgba(0,0,0,0.1)'" onmouseout="this.style.transform=''; this.style.boxShadow=''">
-        <img src="https://images.pexels.com/photos/159711/books-bookstore-book-reading-159711.jpeg?auto=compress&cs=tinysrgb&w=300&h=400&fit=crop" alt="Advanced Algorithms" style="width: 100%; height: 320px; object-fit: cover;">
-        <div style="padding: 20px;">
-          <div style="display: flex; justify-content: space-between; margin-bottom: 10px;">
-            <span style="background: black; color: white; padding: 5px 12px; border-radius: 20px; font-size: 12px;">Computer Science</span>
-            <div style="color: black; display: flex; align-items: center; font-size: 14px;">
-              ★ 4.9
-            </div>
-          </div>
-          <h3 style="font-weight: bold; font-size: 20px; color: black; margin: 0 0 5px;">Advanced Algorithms</h3>
-          <p style="color: gray; margin: 0 0 20px;">Dr. Sarah Chen</p>
-          <div style="display: flex; justify-content: space-between; align-items: center;">
-            <span style="font-size: 22px; font-weight: bold; color: black;">$89.99</span>
-            <button style="background: black; color: white; padding: 10px 16px; border-radius: 8px; border: none; cursor: pointer;">Add to Cart</button>
-          </div>
-        </div>
-      </div>
+  <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px;">
 
-      <!-- Book 2 -->
-      <div style="background: white; border: 1px solid #ddd; border-radius: 20px; overflow: hidden; transition: transform 0.3s, box-shadow 0.3s;" onmouseover="this.style.transform='translateY(-10px)'; this.style.boxShadow='0 10px 20px rgba(0,0,0,0.1)'" onmouseout="this.style.transform=''; this.style.boxShadow=''">
-        <img src="https://images.pexels.com/photos/1029141/pexels-photo-1029141.jpeg?auto=compress&cs=tinysrgb&w=300&h=400&fit=crop" alt="Digital Signal Processing" style="width: 100%; height: 320px; object-fit: cover;">
-        <div style="padding: 20px;">
-          <div style="display: flex; justify-content: space-between; margin-bottom: 10px;">
-            <span style="background: black; color: white; padding: 5px 12px; border-radius: 20px; font-size: 12px;">Electronics</span>
-            <div style="color: black; display: flex; align-items: center; font-size: 14px;">
-              ★ 4.8
-            </div>
-          </div>
-          <h3 style="font-weight: bold; font-size: 20px; color: black; margin: 0 0 5px;">Digital Signal Processing</h3>
-          <p style="color: gray; margin: 0 0 20px;">Prof. Michael Rodriguez</p>
-          <div style="display: flex; justify-content: space-between; align-items: center;">
-            <span style="font-size: 22px; font-weight: bold; color: black;">$94.99</span>
-            <button style="background: black; color: white; padding: 10px 16px; border-radius: 8px; border: none; cursor: pointer;">Add to Cart</button>
-          </div>
+  <!-- Book 1 -->
+  <a href="book.html?title=Advanced%20Algorithms&author=Dr.%20Sarah%20Chen&category=Computer%20Science&price=89.99&rating=4.9&image=https://images.pexels.com/photos/159711/books-bookstore-book-reading-159711.jpeg" style="text-decoration: none;">
+    <div style="background: white; border: 1px solid #ddd; border-radius: 20px; overflow: hidden; transition: transform 0.3s, box-shadow 0.3s;"
+      onmouseover="this.style.transform='translateY(-10px)'; this.style.boxShadow='0 10px 20px rgba(0,0,0,0.1)'"
+      onmouseout="this.style.transform=''; this.style.boxShadow=''">
+      <img src="https://images.pexels.com/photos/159711/books-bookstore-book-reading-159711.jpeg" alt="Advanced Algorithms" style="width: 100%; height: 320px; object-fit: cover;">
+      <div style="padding: 20px;">
+        <div style="display: flex; justify-content: space-between; margin-bottom: 10px;">
+          <span style="background: black; color: white; padding: 5px 12px; border-radius: 20px; font-size: 12px;">Computer Science</span>
+          <div style="color: black; font-size: 14px;">★ 4.9</div>
         </div>
-      </div>
-
-      <!-- Book 3 -->
-      <div style="background: white; border: 1px solid #ddd; border-radius: 20px; overflow: hidden; transition: transform 0.3s, box-shadow 0.3s;" onmouseover="this.style.transform='translateY(-10px)'; this.style.boxShadow='0 10px 20px rgba(0,0,0,0.1)'" onmouseout="this.style.transform=''; this.style.boxShadow=''">
-        <img src="https://media.springernature.com/full/springer-static/cover-hires/book/978-981-15-3212-2" alt="Power Systems Analysis" style="width: 100%; height: 320px; object-fit: cover;">
-        <div style="padding: 20px;">
-          <div style="display: flex; justify-content: space-between; margin-bottom: 10px;">
-            <span style="background: black; color: white; padding: 5px 12px; border-radius: 20px; font-size: 12px;">Electrical</span>
-            <div style="color: black; display: flex; align-items: center; font-size: 14px;">
-              ★ 4.7
-            </div>
-          </div>
-          <h3 style="font-weight: bold; font-size: 20px; color: black; margin: 0 0 5px;">Power Systems Analysis</h3>
-          <p style="color: gray; margin: 0 0 20px;">Dr. Emily Johnson</p>
-          <div style="display: flex; justify-content: space-between; align-items: center;">
-            <span style="font-size: 22px; font-weight: bold; color: black;">$76.99</span>
-            <button style="background: black; color: white; padding: 10px 16px; border-radius: 8px; border: none; cursor: pointer;">Add to Cart</button>
-          </div>
-        </div>
-      </div>
-      <!-- Book 1 -->
-      <div style="background: white; border: 1px solid #ddd; border-radius: 20px; overflow: hidden; transition: transform 0.3s, box-shadow 0.3s;" onmouseover="this.style.transform='translateY(-10px)'; this.style.boxShadow='0 10px 20px rgba(0,0,0,0.1)'" onmouseout="this.style.transform=''; this.style.boxShadow=''">
-        <img src="https://m.media-amazon.com/images/I/61CRdeBnfqL._UF1000,1000_QL80_.jpg" alt="Advanced Algorithms" style="width: 100%; height: 320px; object-fit: cover;">
-        <div style="padding: 20px;">
-          <div style="display: flex; justify-content: space-between; margin-bottom: 10px;">
-            <span style="background: black; color: white; padding: 5px 12px; border-radius: 20px; font-size: 12px;">Civil Engineering</span>
-            <div style="color: black; display: flex; align-items: center; font-size: 14px;">
-              ★ 4.9
-            </div>
-          </div>
-          <h3 style="font-weight: bold; font-size: 20px; color: black; margin: 0 0 5px;">Advanced Civil Engineering</h3>
-          <p style="color: gray; margin: 0 0 20px;">Dr. Sarah Chen</p>
-          <div style="display: flex; justify-content: space-between; align-items: center;">
-            <span style="font-size: 22px; font-weight: bold; color: black;">$89.99</span>
-            <button style="background: black; color: white; padding: 10px 16px; border-radius: 8px; border: none; cursor: pointer;">Add to Cart</button>
-          </div>
-        </div>
-      </div>
-
-      <!-- Book 2 -->
-      <div style="background: white; border: 1px solid #ddd; border-radius: 20px; overflow: hidden; transition: transform 0.3s, box-shadow 0.3s;" onmouseover="this.style.transform='translateY(-10px)'; this.style.boxShadow='0 10px 20px rgba(0,0,0,0.1)'" onmouseout="this.style.transform=''; this.style.boxShadow=''">
-        <img src="https://media.springernature.com/full/springer-static/cover-hires/book/978-3-030-96322-4" alt="Digital Signal Processing" style="width: 100%; height: 320px; object-fit: cover;">
-        <div style="padding: 20px;">
-          <div style="display: flex; justify-content: space-between; margin-bottom: 10px;">
-            <span style="background: black; color: white; padding: 5px 12px; border-radius: 20px; font-size: 12px;">Electronics</span>
-            <div style="color: black; display: flex; align-items: center; font-size: 14px;">
-              ★ 4.8
-            </div>
-          </div>
-          <h3 style="font-weight: bold; font-size: 20px; color: black; margin: 0 0 5px;">Digital Signal Processing</h3>
-          <p style="color: gray; margin: 0 0 20px;">Prof. Michael Rodriguez</p>
-          <div style="display: flex; justify-content: space-between; align-items: center;">
-            <span style="font-size: 22px; font-weight: bold; color: black;">$94.99</span>
-            <button style="background: black; color: white; padding: 10px 16px; border-radius: 8px; border: none; cursor: pointer;">Add to Cart</button>
-          </div>
-        </div>
-      </div>
-
-      <!-- Book 3 -->
-      <div style="background: white; border: 1px solid #ddd; border-radius: 20px; overflow: hidden; transition: transform 0.3s, box-shadow 0.3s;" onmouseover="this.style.transform='translateY(-10px)'; this.style.boxShadow='0 10px 20px rgba(0,0,0,0.1)'" onmouseout="this.style.transform=''; this.style.boxShadow=''">
-        <img src="https://media.springernature.com/full/springer-static/cover-hires/book/978-981-15-3212-2" alt="Power Systems Analysis" style="width: 100%; height: 320px; object-fit: cover;">
-        <div style="padding: 20px;">
-          <div style="display: flex; justify-content: space-between; margin-bottom: 10px;">
-            <span style="background: black; color: white; padding: 5px 12px; border-radius: 20px; font-size: 12px;">Electrical</span>
-            <div style="color: black; display: flex; align-items: center; font-size: 14px;">
-              ★ 4.7
-            </div>
-          </div>
-          <h3 style="font-weight: bold; font-size: 20px; color: black; margin: 0 0 5px;">Power Systems Analysis 2</h3>
-          <p style="color: gray; margin: 0 0 20px;">Dr. Emily Johnson</p>
-          <div style="display: flex; justify-content: space-between; align-items: center;">
-            <span style="font-size: 22px; font-weight: bold; color: black;">$76.99</span>
-            <button style="background: black; color: white; padding: 10px 16px; border-radius: 8px; border: none; cursor: pointer;">Add to Cart</button>
-          </div>
+        <h3 style="font-weight: bold; font-size: 20px; color: black;">Advanced Algorithms</h3>
+        <p style="color: gray;">Dr. Sarah Chen</p>
+        <div style="display: flex; justify-content: space-between; align-items: center;">
+          <span style="font-size: 22px; font-weight: bold; color: black;">$89.99</span>
+          <button style="background: black; color: white; padding: 10px 16px; border-radius: 8px; border: none;">Add to Cart</button>
         </div>
       </div>
     </div>
+  </a>
+
+  <!-- Book 2 -->
+  <a href="book.html?title=Digital%20Signal%20Processing&author=Prof.%20Michael%20Rodriguez&category=Electronics&price=94.99&rating=4.8&image=https://images.pexels.com/photos/1029141/pexels-photo-1029141.jpeg" style="text-decoration: none;">
+    <div style="background: white; border: 1px solid #ddd; border-radius: 20px; overflow: hidden; transition: transform 0.3s, box-shadow 0.3s;"
+      onmouseover="this.style.transform='translateY(-10px)'; this.style.boxShadow='0 10px 20px rgba(0,0,0,0.1)'"
+      onmouseout="this.style.transform=''; this.style.boxShadow=''">
+      <img src="https://images.pexels.com/photos/1029141/pexels-photo-1029141.jpeg" alt="Digital Signal Processing" style="width: 100%; height: 320px; object-fit: cover;">
+      <div style="padding: 20px;">
+        <div style="display: flex; justify-content: space-between; margin-bottom: 10px;">
+          <span style="background: black; color: white; padding: 5px 12px; border-radius: 20px; font-size: 12px;">Electronics</span>
+          <div style="color: black; font-size: 14px;">★ 4.8</div>
+        </div>
+        <h3 style="font-weight: bold; font-size: 20px; color: black;">Digital Signal Processing</h3>
+        <p style="color: gray;">Prof. Michael Rodriguez</p>
+        <div style="display: flex; justify-content: space-between; align-items: center;">
+          <span style="font-size: 22px; font-weight: bold; color: black;">$94.99</span>
+          <button style="background: black; color: white; padding: 10px 16px; border-radius: 8px; border: none;">Add to Cart</button>
+        </div>
+      </div>
+    </div>
+  </a>
+
+  <!-- Book 3 -->
+  <a href="book.html?title=Power%20Systems%20Analysis&author=Dr.%20Emily%20Johnson&category=Electrical&price=76.99&rating=4.7&image=https://media.springernature.com/full/springer-static/cover-hires/book/978-981-15-3212-2" style="text-decoration: none;">
+    <div style="background: white; border: 1px solid #ddd; border-radius: 20px; overflow: hidden; transition: transform 0.3s, box-shadow 0.3s;"
+      onmouseover="this.style.transform='translateY(-10px)'; this.style.boxShadow='0 10px 20px rgba(0,0,0,0.1)'"
+      onmouseout="this.style.transform=''; this.style.boxShadow=''">
+      <img src="https://media.springernature.com/full/springer-static/cover-hires/book/978-981-15-3212-2" alt="Power Systems Analysis" style="width: 100%; height: 320px; object-fit: cover;">
+      <div style="padding: 20px;">
+        <div style="display: flex; justify-content: space-between; margin-bottom: 10px;">
+          <span style="background: black; color: white; padding: 5px 12px; border-radius: 20px; font-size: 12px;">Electrical</span>
+          <div style="color: black; font-size: 14px;">★ 4.7</div>
+        </div>
+        <h3 style="font-weight: bold; font-size: 20px; color: black;">Power Systems Analysis</h3>
+        <p style="color: gray;">Dr. Emily Johnson</p>
+        <div style="display: flex; justify-content: space-between; align-items: center;">
+          <span style="font-size: 22px; font-weight: bold; color: black;">$76.99</span>
+          <button style="background: black; color: white; padding: 10px 16px; border-radius: 8px; border: none;">Add to Cart</button>
+        </div>
+      </div>
+    </div>
+  </a>
+
+  <!-- Book 4 -->
+  <a href="book.html?title=Advanced%20Civil%20Engineering&author=Dr.%20Sarah%20Chen&category=Civil%20Engineering&price=89.99&rating=4.9&image=https://m.media-amazon.com/images/I/61CRdeBnfqL._UF1000,1000_QL80_.jpg" style="text-decoration: none;">
+    <div style="background: white; border: 1px solid #ddd; border-radius: 20px; overflow: hidden; transition: transform 0.3s, box-shadow 0.3s;"
+      onmouseover="this.style.transform='translateY(-10px)'; this.style.boxShadow='0 10px 20px rgba(0,0,0,0.1)'"
+      onmouseout="this.style.transform=''; this.style.boxShadow=''">
+      <img src="https://m.media-amazon.com/images/I/61CRdeBnfqL._UF1000,1000_QL80_.jpg" alt="Advanced Civil Engineering" style="width: 100%; height: 320px; object-fit: cover;">
+      <div style="padding: 20px;">
+        <div style="display: flex; justify-content: space-between; margin-bottom: 10px;">
+          <span style="background: black; color: white; padding: 5px 12px; border-radius: 20px; font-size: 12px;">Civil Engineering</span>
+          <div style="color: black; font-size: 14px;">★ 4.9</div>
+        </div>
+        <h3 style="font-weight: bold; font-size: 20px; color: black;">Advanced Civil Engineering</h3>
+        <p style="color: gray;">Dr. Sarah Chen</p>
+        <div style="display: flex; justify-content: space-between; align-items: center;">
+          <span style="font-size: 22px; font-weight: bold; color: black;">$89.99</span>
+          <button style="background: black; color: white; padding: 10px 16px; border-radius: 8px; border: none;">Add to Cart</button>
+        </div>
+      </div>
+    </div>
+  </a>
+
+  <!-- Book 5 -->
+  <a href="book.html?title=Digital%20Signal%20Processing&author=Prof.%20Michael%20Rodriguez&category=Electronics&price=94.99&rating=4.8&image=https://media.springernature.com/full/springer-static/cover-hires/book/978-3-030-96322-4" style="text-decoration: none;">
+    <div style="background: white; border: 1px solid #ddd; border-radius: 20px; overflow: hidden; transition: transform 0.3s, box-shadow 0.3s;"
+      onmouseover="this.style.transform='translateY(-10px)'; this.style.boxShadow='0 10px 20px rgba(0,0,0,0.1)'"
+      onmouseout="this.style.transform=''; this.style.boxShadow=''">
+      <img src="https://media.springernature.com/full/springer-static/cover-hires/book/978-3-030-96322-4" alt="Digital Signal Processing" style="width: 100%; height: 320px; object-fit: cover;">
+      <div style="padding: 20px;">
+        <div style="display: flex; justify-content: space-between; margin-bottom: 10px;">
+          <span style="background: black; color: white; padding: 5px 12px; border-radius: 20px; font-size: 12px;">Electronics</span>
+          <div style="color: black; font-size: 14px;">★ 4.8</div>
+        </div>
+        <h3 style="font-weight: bold; font-size: 20px; color: black;">Digital Signal Processing</h3>
+        <p style="color: gray;">Prof. Michael Rodriguez</p>
+        <div style="display: flex; justify-content: space-between; align-items: center;">
+          <span style="font-size: 22px; font-weight: bold; color: black;">$94.99</span>
+          <button style="background: black; color: white; padding: 10px 16px; border-radius: 8px; border: none;">Add to Cart</button>
+        </div>
+      </div>
+    </div>
+  </a>
+
+  <!-- Book 6 -->
+  <a href="book.html?title=Power%20Systems%20Analysis%202&author=Dr.%20Emily%20Johnson&category=Electrical&price=76.99&rating=4.7&image=https://media.springernature.com/full/springer-static/cover-hires/book/978-981-15-3212-2" style="text-decoration: none;">
+    <div style="background: white; border: 1px solid #ddd; border-radius: 20px; overflow: hidden; transition: transform 0.3s, box-shadow 0.3s;"
+      onmouseover="this.style.transform='translateY(-10px)'; this.style.boxShadow='0 10px 20px rgba(0,0,0,0.1)'"
+      onmouseout="this.style.transform=''; this.style.boxShadow=''">
+      <img src="https://media.springernature.com/full/springer-static/cover-hires/book/978-981-15-3212-2" alt="Power Systems Analysis 2" style="width: 100%; height: 320px; object-fit: cover;">
+      <div style="padding: 20px;">
+        <div style="display: flex; justify-content: space-between; margin-bottom: 10px;">
+          <span style="background: black; color: white; padding: 5px 12px; border-radius: 20px; font-size: 12px;">Electrical</span>
+          <div style="color: black; font-size: 14px;">★ 4.7</div>
+        </div>
+        <h3 style="font-weight: bold; font-size: 20px; color: black;">Power Systems Analysis 2</h3>
+        <p style="color: gray;">Dr. Emily Johnson</p>
+        <div style="display: flex; justify-content: space-between; align-items: center;">
+          <span style="font-size: 22px; font-weight: bold; color: black;">$76.99</span>
+          <button style="background: black; color: white; padding: 10px 16px; border-radius: 8px; border: none;">Add to Cart</button>
+        </div>
+      </div>
+    </div>
+  </a>
+
+</div>
+
   </div>
 </section>
 
