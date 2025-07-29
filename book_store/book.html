@@ -10,8 +10,7 @@
     body {
       margin: 0;
       font-family: 'sans-serif';
-      background-image: url('https://media.istockphoto.com/id/1403848173/vector/vector-online-chatting-pattern-online-chatting-seamless-background.jpg?s=612x612&w=0&k=20&c=W3O15mtJiNlJuIgU6S9ZlnzM_yCE27eqwTCfXGYwCSo=');
-      background-repeat: repeat;
+      background-color: #f4f4f4;
       color: #000;
     }
 
@@ -30,6 +29,7 @@
       position: fixed;
       top: 0;
       width: 100%;
+      box-sizing: border-box;
       z-index: 1000;
     }
 
@@ -37,61 +37,65 @@
       max-width: 1000px;
       margin: 140px auto 40px;
       padding: 20px;
-      background: rgba(255, 255, 255, 0.95);
+      background: white;
       border-radius: 20px;
-      background-image: url('https://www.transparenttextures.com/patterns/brick-wall.png');
-      background-repeat: no-repeat;
-      background-size: cover;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
     }
 
     .book-cover {
       max-width: 300px;
       border-radius: 12px;
       box-shadow: 0 8px 20px rgba(0,0,0,0.15);
-    }
-
-    .alert-button {
-      padding: 12px 24px;
-      background-color: #000000;
-      color: white;
-      border: none;
-      border-radius: 8px;
-      font-weight: bold;
       cursor: pointer;
-      margin-right: 12px;
+      transition: transform 0.3s ease;
+    }
+    .book-cover:hover {
+      transform: scale(1.03);
     }
 
-    .loading-button {
-      padding: 12px 40px 12px 20px;
-      background-color: #adadad;
-      color: white;
-      border: none;
-      border-radius: 8px;
-      font-weight: bold;
-      cursor: pointer;
-      position: relative;
-      justify-content: space-between;
-    }
+    /* Stepper Styles from home.html */
+    .stepper-container { display: flex; flex-direction: column; align-items: flex-start; }
+    .quantity-stepper { display: flex; align-items: center; justify-content: center; border: 1px solid #ccc; border-radius: 8px; overflow: hidden; }
+    .quantity-btn { background: #f0f0f0; border: none; font-size: 18px; font-weight: bold; cursor: pointer; padding: 8px 14px; color: #333; }
+    .quantity-btn:disabled { color: #ccc; cursor: not-allowed; background: #f9f9f9; }
+    .quantity-value { padding: 0 18px; font-size: 16px; font-weight: bold; }
+    .stock-alert { font-size: 12px; color: #d9534f; text-align: center; margin-top: 5px; height: 14px; }
+    .add-to-cart-btn { padding: 10px 16px; background: black; color: white; border-radius: 8px; border: none; cursor: pointer; font-weight: bold; }
+    .add-to-cart-btn:disabled { background: #cccccc; color: #666666; cursor: not-allowed; }
 
-    .loading-button::after {
-      content: '';
-      position: absolute;
-      right: 18px;
-      top: 50%;
-      transform: translateY(-50%);
-      width: 14px;
-      height: 14px;
-      border: 2px solid white;
-      border-top: 2px solid transparent;
-      border-radius: 50%;
-      animation: spin 1s linear infinite;
+    /* Details Toggle Button */
+    .details-btn { padding: 10px 16px; background: #e7e7e7; color: #333; border: 1px solid #ccc; border-radius: 8px; cursor: pointer; margin-top: 10px; }
+    
+    /* Image Modal Styles */
+    .modal-overlay {
+        display: none;
+        position: fixed;
+        z-index: 1001;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        background-color: rgba(0,0,0,0.8);
+        justify-content: center;
+        align-items: center;
     }
-
-    @keyframes spin {
-      from { transform: translateY(-50%) rotate(0deg); }
-      to { transform: translateY(-50%) rotate(360deg); }
+    .modal-content {
+        margin: auto;
+        display: block;
+        max-width: 80%;
+        max-height: 80vh;
     }
-
+    .modal-close {
+        position: absolute;
+        top: 20px;
+        right: 35px;
+        color: #f1f1f1;
+        font-size: 40px;
+        font-weight: bold;
+        cursor: pointer;
+    }
+    
     h1 {
       font-family: 'Playfair Display', serif;
       font-size: 34px;
@@ -112,7 +116,6 @@
 </head>
 <body>
 
-  <!-- Navigation -->
   <nav class="navbar">
     <div style="display:flex; align-items:center; gap:10px;width:200px;">
       <img src="https://cdn-icons-png.flaticon.com/512/29/29302.png" width="40" height="40" alt="logo"/>
@@ -130,72 +133,212 @@
     </div>
   </nav>
 
-  <!-- Book Detail Content -->
   <div class="container" id="book-details">
     <h1>Loading book...</h1>
   </div>
 
+  <div id="image-modal" class="modal-overlay">
+      <span class="modal-close" id="modal-close-btn">×</span>
+      <img class="modal-content" id="modal-image">
+  </div>
+  
+  <div style="background:#000000; color:white; padding:40px 20px; margin-top:60px;">
+    <div style="max-width:1000px; margin:auto;">
+      <h2 style="font-family:'Playfair Display',serif; font-size:26px; margin-bottom:10px;">About BookHaven</h2>
+      <p style="font-size:16px; line-height:1.6; color:#ccc;">
+        Welcome to BookHaven — your premium online bookstore. We offer a wide range of titles to fuel your imagination and support your learning journey. Dive into a world of stories, knowledge, and discovery curated just for you. Watch the video to learn more about our mission and values.
+      </p>
+      <div style="position:relative; padding-bottom:56.25%; height:0; margin-top:20px; box-shadow:0 0 20px #000;">
+        <iframe 
+          src="https://www.youtube.com/embed/SKVcQnyEIT8?si=Bwwi76txpvbXrzCe" 
+          title="YouTube video player" 
+          frameborder="0" 
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+          referrerpolicy="strict-origin-when-cross-origin" 
+          allowfullscreen 
+          style="position:absolute; top:0; left:0; width:100%; height:100%;">
+        </iframe>
+      </div>
+    </div>
+  </div>
+
   <script>
+    // --- CART STATE & LOGIC ---
+    let cart = JSON.parse(localStorage.getItem('bookCart')) || [];
+    
+    function saveCart() {
+        localStorage.setItem('bookCart', JSON.stringify(cart));
+    }
+
+    function handleAddToCart(book) {
+        if (book && book.quantity > 0) {
+            cart.push({ book: book, quantity: 1 });
+            rerenderPage();
+        }
+    }
+
+    function handleIncreaseQuantity(bookTitle) {
+        const cartItem = cart.find(item => item.book.title === bookTitle);
+        const book = getQueryParams();
+        if (cartItem && cartItem.quantity < book.quantity) {
+            cartItem.quantity++;
+            rerenderPage();
+        }
+    }
+
+    function handleDecreaseQuantity(bookTitle) {
+        const cartItemIndex = cart.findIndex(item => item.book.title === bookTitle);
+        if (cartItemIndex > -1) {
+            cart[cartItemIndex].quantity--;
+            if (cart[cartItemIndex].quantity === 0) {
+                cart.splice(cartItemIndex, 1);
+            }
+            rerenderPage();
+        }
+    }
+
+    function rerenderPage() {
+        saveCart();
+        const bookData = getQueryParams();
+        if (bookData.title) {
+            renderBook(bookData);
+        }
+    }
+
+    // --- PAGE SETUP & RENDERING ---
     function getQueryParams() {
       const params = new URLSearchParams(window.location.search);
       return {
-        title: params.get("title"),
-        author: params.get("author"),
-        category: params.get("category"),
-        price: params.get("price"),
-        rating: params.get("rating"),
-        image: params.get("image")
+        title: decodeURIComponent(params.get("title")),
+        author: decodeURIComponent(params.get("author")),
+        category: decodeURIComponent(params.get("category")),
+        price: parseFloat(params.get("price")),
+        rating: parseFloat(params.get("rating")),
+        quantity: parseInt(params.get("quantity"), 10),
+        image: decodeURIComponent(params.get("image"))
       };
     }
 
     function renderBook(data) {
       const container = document.getElementById("book-details");
+      const cartItem = cart.find(item => item.book.title === data.title);
+      const isInCart = !!cartItem;
+      let buttonHtml;
+      let stockMessage = '';
+
+      if (isInCart) {
+          const currentQty = cartItem.quantity;
+          const maxQtyReached = currentQty >= data.quantity;
+          if (maxQtyReached) {
+            stockMessage = `Only ${data.quantity} left!`;
+          }
+          buttonHtml = `
+            <div class="stepper-container">
+              <div class="quantity-stepper">
+                <button class="quantity-btn" data-action="decrease" data-title="${data.title}">-</button>
+                <span class="quantity-value">${currentQty}</span>
+                <button class="quantity-btn" data-action="increase" data-title="${data.title}" ${maxQtyReached ? 'disabled' : ''}>+</button>
+              </div>
+              <div class="stock-alert">${stockMessage}</div>
+            </div>
+          `;
+      } else {
+          const isOutOfStock = data.quantity === 0;
+          buttonHtml = `<button class="add-to-cart-btn" data-action="add" ${isOutOfStock ? 'disabled' : ''}>${isOutOfStock ? 'Out of Stock' : 'Add to Cart'}</button>`;
+      }
+
       container.innerHTML = `
         <div style="display:flex; flex-wrap:wrap; gap:40px;">
-          <img class="book-cover" src="${decodeURIComponent(data.image)}" alt="${data.title}" />
+          <img id="book-cover-img" class="book-cover" src="${data.image}" alt="${data.title}" />
           <div class="book-info">
-            <h1>${decodeURIComponent(data.title)}</h1>
-            <p><strong>Author:</strong> ${decodeURIComponent(data.author)}</p>
-            <p><strong>Department:</strong> ${decodeURIComponent(data.category)}</p>
+            <h1>${data.title}</h1>
+            <p><strong>Author:</strong> ${data.author}</p>
+            <p><strong>Department:</strong> ${data.category}</p>
             <p><strong>Rating:</strong> ★ ${data.rating}</p>
-            <p><strong>Price:</strong> $${data.price}</p>
-            <p style="margin-top: 16px;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse dapibus, sem vitae dapibus laoreet, nunc eros cursus arcu.</p>
-            <button class="alert-button" onclick="alert('This is an alert button!')">Alert</button>
-            <button class="loading-button">Loading</button>
+            <p style="font-size: 24px; font-weight: bold; margin: 16px 0;">$${data.price}</p>
+            
+            <div id="book-cart-controls" style="margin-top: 20px;">
+              ${buttonHtml}
+            </div>
+
+            <hr style="margin: 20px 0;">
+
+            <button id="toggle-details-btn" class="details-btn">Show Details</button>
+            <div id="book-description" style="display: none; margin-top: 10px;">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse dapibus, sem vitae dapibus laoreet, nunc eros cursus arcu, vitae interdum magna arcu sit amet nulla. Pellentesque quis semper mi. Duis vel quam sed elit fringilla finibus.</p>
+            </div>
           </div>
         </div>
       `;
+      
+      attachEventListeners();
     }
 
-    const bookData = getQueryParams();
-    if (bookData.title) {
-      renderBook(bookData);
+    function attachEventListeners() {
+        const cartControls = document.getElementById('book-cart-controls');
+        if (cartControls) {
+            cartControls.addEventListener('click', (e) => {
+                const action = e.target.dataset.action;
+                const title = e.target.dataset.title;
+                const bookData = getQueryParams();
+
+                if (action === 'add') handleAddToCart(bookData);
+                else if (action === 'increase') handleIncreaseQuantity(title);
+                else if (action === 'decrease') handleDecreaseQuantity(title);
+            });
+        }
+        
+        const toggleBtn = document.getElementById('toggle-details-btn');
+        const description = document.getElementById('book-description');
+        if (toggleBtn && description) {
+            toggleBtn.addEventListener('click', () => {
+                const isHidden = description.style.display === 'none';
+                description.style.display = isHidden ? 'block' : 'none';
+                toggleBtn.textContent = isHidden ? 'Hide Details' : 'Show Details';
+            });
+        }
+
+        const bookCoverImg = document.getElementById('book-cover-img');
+        const modal = document.getElementById('image-modal');
+        const modalImg = document.getElementById('modal-image');
+        const closeModalBtn = document.getElementById('modal-close-btn');
+
+        if (bookCoverImg) {
+            bookCoverImg.addEventListener('click', () => {
+                modal.style.display = 'flex';
+                modalImg.src = bookCoverImg.src;
+            });
+        }
+        if(closeModalBtn) {
+            closeModalBtn.addEventListener('click', () => {
+                modal.style.display = 'none';
+            });
+        }
+        if(modal) {
+            modal.addEventListener('click', (e) => {
+                if (e.target === modal) {
+                    modal.style.display = 'none';
+                }
+            });
+        }
     }
-  </script>
-
-<div style="background:#000000; color:white; padding:40px 20px; margin-top:60px;">
-  <div style="max-width:1000px; margin:auto;">
-    <h2 style="font-family:'Playfair Display',serif; font-size:26px; margin-bottom:10px;">About BookHaven</h2>
-    <p style="font-size:16px; line-height:1.6; color:#ccc;">
-      Welcome to BookHaven — your premium online bookstore. We offer a wide range of titles to fuel your imagination and support your learning journey. Dive into a world of stories, knowledge, and discovery curated just for you. Watch the video to learn more about our mission and values.
-    </p>
-
     
-    <div style="position:relative; padding-bottom:56.25%; height:0; margin-top:20px; box-shadow:0 0 20px #000;">
-      <iframe 
-        src="https://www.youtube.com/embed/SKVcQnyEIT8?si=Bwwi76txpvbXrzCe" 
-        title="YouTube video player" 
-        frameborder="0" 
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-        referrerpolicy="strict-origin-when-cross-origin" 
-        allowfullscreen 
-        style="position:absolute; top:0; left:0; width:100%; height:100%;">
-      </iframe>
-    </div>
-  </div>
-</div>
+    document.addEventListener('DOMContentLoaded', () => {
+        const bookData = getQueryParams();
+        if (bookData.title) {
+            // A small hack: since home.html doesn't pass quantity, we can find it
+            // This would be solved by a real backend or a more robust state management
+            const bookFromStorage = JSON.parse(localStorage.getItem('allBooks'))?.find(b => b.title === bookData.title);
+            if(bookFromStorage) {
+                bookData.quantity = bookFromStorage.quantity;
+            }
+            renderBook(bookData);
+        } else {
+            document.getElementById("book-details").innerHTML = '<h1>Book not found.</h1><p>Please select a book from our <a href="home.html">catalogue</a>.</p>';
+        }
+    });
 
-
+  </script>
 
 </body>
 </html>

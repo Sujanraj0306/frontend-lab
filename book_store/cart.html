@@ -7,12 +7,11 @@
 </head>
 <body style="margin:0; font-family:Arial, sans-serif; background:#f9f9f9;">
 
-  <!-- Fixed Header -->
-  <nav style="position:fixed; top:0; width:96%; background-color:white; padding:20px 40px; box-shadow:0 2px 10px rgba(0,0,0,0.05); z-index:999;">
+  <nav style="position:fixed; top:0; width:100%; box-sizing: border-box; background-color:white; padding:20px 40px; box-shadow:0 2px 10px rgba(0,0,0,0.05); z-index:999;">
     <div style="display:flex; justify-content:space-between; align-items:center;">
       <div style="display:flex; align-items:center; gap:10px;">
         <div style="padding:1px; border-radius:10px;">
-          <span><img src="data:image/png;base64,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" height="40px" width="40px" /></span>
+          <span><img src="data:image/png;base64,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" height="40px" width="40px" /></span>
         </div>
         <div>
           <h1 style="margin:0; font-size:24px;">BookHaven</h1>
@@ -29,103 +28,59 @@
     </div>
   </nav>
 
-  <!-- Main Cart Content -->
-  <div style="padding-top:120px; padding-left:40px; padding-right:40px;">
+  <div style="padding-top:120px; padding-left:40px; padding-right:40px; padding-bottom: 40px;">
     <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:32px;">
       <div>
         <h1 style="font-size:32px; margin-bottom:4px;">Shopping Cart</h1>
-        <p style="color:gray;">2 items in your cart</p>
+        <p style="color:gray;" id="cart-item-count">0 items in your cart</p>
       </div>
-      <a href="catalogue.html" style="text-decoration:none; color:black; font-weight:500; display:flex; align-items:center; gap:8px;">
+      <a href="home.html" style="text-decoration:none; color:black; font-weight:500; display:flex; align-items:center; gap:8px;">
         ← <span>Continue Shopping</span>
       </a>
     </div>
 
-    <div style="display:grid; grid-template-columns:2fr 1fr; gap:32px;">
-      <!-- Cart Items -->
-      <div>
-        <!-- Item -->
-        <div style="background:white; border:1px solid #e5e7eb; border-radius:16px; padding:24px; margin-bottom:16px;">
-          <div style="display:flex; gap:16px;">
-            <img src="https://m.media-amazon.com/images/I/61CRdeBnfqL._UF1000,1000_QL80_.jpg" style="width:96px; height:128px; object-fit:cover; border-radius:8px;" />
-            <div style="flex:1;">
-              <div style="display:flex; justify-content:space-between;">
-                <div>
-                  <h3 style="margin:0; font-size:18px;">Book Title</h3>
-                  <p style="margin:4px 0; color:gray;">by Author Name</p>
-                  <p style="margin:0; font-size:14px; color:#9ca3af;">Publisher Name</p>
-                </div>
-                <button style="color:#dc2626; background:none; border:none; cursor:pointer;">🗑</button>
-              </div>
-              <div style="display:flex; justify-content:space-between; align-items:center; margin-top:16px;">
-                <div style="display:flex; gap:12px; align-items:center;">
-                  <button style="width:32px; height:32px; border-radius:50%; background:#f3f4f6; border:none; cursor:pointer;">-</button>
-                  <span style="width:32px; text-align:center;">1</span>
-                  <button style="width:32px; height:32px; border-radius:50%; background:#f3f4f6; border:none; cursor:pointer;">+</button>
-                </div>
-                <div style="text-align:right;">
-                  <p style="margin:0; color:#6b7280; font-size:14px;">$15.99 each</p>
-                  <p style="margin:0; font-size:18px; font-weight:bold;">$31.98</p>
-                </div>
-              </div>
-            </div>
+    <div id="cart-grid" style="display:grid; grid-template-columns:2fr 1fr; gap:32px;">
+      <div id="cart-items-container">
           </div>
-        </div>
-         <div style="background:white; border:1px solid #e5e7eb; border-radius:16px; padding:24px; margin-bottom:16px;">
-          <div style="display:flex; gap:16px;">
-            <img src="https://media.springernature.com/full/springer-static/cover-hires/book/978-3-030-96322-4" alt="Book Title" style="width:96px; height:128px; object-fit:cover; border-radius:8px;" />
-            <div style="flex:1;">
-              <div style="display:flex; justify-content:space-between;">
-                <div>
-                  <h3 style="margin:0; font-size:18px;">Book Title</h3>
-                  <p style="margin:4px 0; color:gray;">by Author Name</p>
-                  <p style="margin:0; font-size:14px; color:#9ca3af;">Publisher Name</p>
-                </div>
-                <button style="color:#dc2626; background:none; border:none; cursor:pointer;">🗑</button>
-              </div>
-              <div style="display:flex; justify-content:space-between; align-items:center; margin-top:16px;">
-                <div style="display:flex; gap:12px; align-items:center;">
-                  <button style="width:32px; height:32px; border-radius:50%; background:#f3f4f6; border:none; cursor:pointer;">-</button>
-                  <span style="width:32px; text-align:center;">1</span>
-                  <button style="width:32px; height:32px; border-radius:50%; background:#f3f4f6; border:none; cursor:pointer;">+</button>
-                </div>
-                <div style="text-align:right;">
-                  <p style="margin:0; color:#6b7280; font-size:14px;">$15.99 each</p>
-                  <p style="margin:0; font-size:18px; font-weight:bold;">$31.98</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
 
-        <!-- Repeat above block for each cart item -->
-      </div>
-
-      <!-- Order Summary -->
       <div style="position:sticky; top:120px;">
         <div style="background:white; border:1px solid #e5e7eb; border-radius:16px; padding:24px;">
           <h2 style="font-size:24px; margin-bottom:24px;">Order Summary</h2>
-          <div style="margin-bottom:24px;">
+          
+          <div style="margin-bottom: 24px;">
+            <label style="font-weight: 600; display: block; margin-bottom: 8px;">Discount Code</label>
+            <div style="display: flex; gap: 8px;">
+              <input type="text" id="discount-code-input" placeholder="Enter coupon" style="flex-grow: 1; padding: 10px; border: 1px solid #ccc; border-radius: 8px;">
+              <button id="apply-discount-btn" style="padding: 10px 16px; background: #333; color: white; border: none; border-radius: 8px; cursor: pointer;">Apply</button>
+            </div>
+            <p id="discount-message" style="font-size: 14px; margin-top: 8px; height: 16px;"></p>
+          </div>
+
+          <div id="order-summary-content">
             <div style="display:flex; justify-content:space-between; margin-bottom:12px;">
               <span style="color:#6b7280;">Subtotal</span>
-              <span style="font-weight:600;">$31.98</span>
+              <span id="summary-subtotal" style="font-weight:600;">$0.00</span>
+            </div>
+            <div id="summary-discount-row" style="display: none; justify-content: space-between; margin-bottom: 12px;">
+                <span style="color: #6b7280;">Discount</span>
+                <span id="summary-discount" style="font-weight: 600; color: #d9534f;">-$0.00</span>
             </div>
             <div style="display:flex; justify-content:space-between; margin-bottom:12px;">
               <span style="color:#6b7280;">Shipping</span>
               <span style="color:green; font-weight:600;">Free</span>
             </div>
             <div style="display:flex; justify-content:space-between; margin-bottom:12px;">
-              <span style="color:#6b7280;">Tax</span>
-              <span style="font-weight:600;">$2.56</span>
+              <span style="color:#6b7280;">Tax (8%)</span>
+              <span id="summary-tax" style="font-weight:600;">$0.00</span>
             </div>
             <hr style="margin:16px 0;" />
             <div style="display:flex; justify-content:space-between; font-size:18px;">
               <span style="font-weight:bold;">Total</span>
-              <span style="font-weight:bold;">$34.54</span>
+              <span id="summary-total" style="font-weight:bold;">$0.00</span>
             </div>
           </div>
           <button style="width:100%; background:black; color:white; padding:16px; border:none; border-radius:12px; font-weight:bold; margin-bottom:16px; cursor:pointer;" onclick="window.location.href='checkout.html'">Proceed to Checkout</button>
-          <button style="width:100%; border:2px solid red; color:red; padding:12px; border-radius:12px; background:none; font-weight:bold; cursor:pointer;">Clear Cart</button>
+          <button id="clear-cart-btn" style="width:100%; border:2px solid red; color:red; padding:12px; border-radius:12px; background:none; font-weight:bold; cursor:pointer;">Clear Cart</button>
           <div style="margin-top:24px; text-align:center; font-size:14px; color:gray;">
             <p>Free shipping on all orders</p>
             <p>30-day return policy</p>
@@ -134,6 +89,155 @@
       </div>
     </div>
   </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+        let cart = JSON.parse(localStorage.getItem('bookCart')) || [];
+        let appliedDiscount = 0;
+
+        const discountCodes = {
+            'SAVE10': 0.10, // 10% off
+            'STUDENT20': 0.20 // 20% off
+        };
+
+        const cartItemsContainer = document.getElementById('cart-items-container');
+        const cartItemCount = document.getElementById('cart-item-count');
+        const summarySubtotal = document.getElementById('summary-subtotal');
+        const summaryTax = document.getElementById('summary-tax');
+        const summaryTotal = document.getElementById('summary-total');
+        const clearCartBtn = document.getElementById('clear-cart-btn');
+        const applyDiscountBtn = document.getElementById('apply-discount-btn');
+        const discountInput = document.getElementById('discount-code-input');
+        const discountMessage = document.getElementById('discount-message');
+        const summaryDiscountRow = document.getElementById('summary-discount-row');
+        const summaryDiscount = document.getElementById('summary-discount');
+
+        function renderCart() {
+            cartItemsContainer.innerHTML = '';
+            
+            if (cart.length === 0) {
+                cartItemsContainer.innerHTML = '<p style="text-align:center; color:gray;">Your cart is empty.</p>';
+                document.querySelector('[onclick*="checkout.html"]').setAttribute('disabled', true);
+            } else {
+                 document.querySelector('[onclick*="checkout.html"]').removeAttribute('disabled');
+            }
+
+            let subtotal = 0;
+            let totalItems = 0;
+
+            cart.forEach(item => {
+                const book = item.book;
+                const quantity = item.quantity;
+                const itemTotal = book.price * quantity;
+                subtotal += itemTotal;
+                totalItems += quantity;
+
+                const cartItemHTML = `
+                    <div style="background:white; border:1px solid #e5e7eb; border-radius:16px; padding:24px; margin-bottom:16px;">
+                      <div style="display:flex; gap:16px;">
+                        <img src="${book.image}" style="width:96px; height:128px; object-fit:cover; border-radius:8px;" />
+                        <div style="flex:1;">
+                          <div style="display:flex; justify-content:space-between;">
+                            <div>
+                              <h3 style="margin:0; font-size:18px;">${book.title}</h3>
+                              <p style="margin:4px 0; color:gray;">by ${book.author}</p>
+                            </div>
+                            <button class="remove-btn" data-title="${book.title}" style="color:#dc2626; background:none; border:none; cursor:pointer; font-size: 20px;">🗑</button>
+                          </div>
+                          <div style="display:flex; justify-content:space-between; align-items:center; margin-top:16px;">
+                            <div style="display:flex; gap:12px; align-items:center;">
+                              <button class="quantity-btn minus-btn" data-title="${book.title}" style="width:32px; height:32px; border-radius:50%; background:#f3f4f6; border:none; cursor:pointer;">-</button>
+                              <span style="width:32px; text-align:center;">${quantity}</span>
+                              <button class="quantity-btn plus-btn" data-title="${book.title}" style="width:32px; height:32px; border-radius:50%; background:#f3f4f6; border:none; cursor:pointer;">+</button>
+                            </div>
+                            <div style="text-align:right;">
+                              <p style="margin:0; color:#6b7280; font-size:14px;">$${book.price.toFixed(2)} each</p>
+                              <p style="margin:0; font-size:18px; font-weight:bold;">$${itemTotal.toFixed(2)}</p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>`;
+                cartItemsContainer.innerHTML += cartItemHTML;
+            });
+            
+            // Calculate totals with discount
+            const discountAmount = subtotal * appliedDiscount;
+            const taxableTotal = subtotal - discountAmount;
+            const tax = taxableTotal * 0.08;
+            const total = taxableTotal + tax;
+
+            // Update DOM
+            cartItemCount.textContent = `${totalItems} items in your cart`;
+            summarySubtotal.textContent = `$${subtotal.toFixed(2)}`;
+            
+            if (appliedDiscount > 0) {
+                summaryDiscount.textContent = `-$${discountAmount.toFixed(2)}`;
+                summaryDiscountRow.style.display = 'flex';
+            } else {
+                summaryDiscountRow.style.display = 'none';
+            }
+
+            summaryTax.textContent = `$${tax.toFixed(2)}`;
+            summaryTotal.textContent = `$${total.toFixed(2)}`;
+        }
+        
+        function updateCart(newCart) {
+            cart = newCart;
+            localStorage.setItem('bookCart', JSON.stringify(cart));
+            renderCart();
+        }
+
+        cartItemsContainer.addEventListener('click', (e) => {
+            const title = e.target.dataset.title;
+            if (!title) return;
+
+            const cartItemIndex = cart.findIndex(item => item.book.title === title);
+            if (cartItemIndex === -1) return;
+
+            if (e.target.classList.contains('plus-btn')) {
+                // Check against original stock before increasing
+                if (cart[cartItemIndex].quantity < cart[cartItemIndex].book.quantity) {
+                    cart[cartItemIndex].quantity++;
+                } else {
+                    alert(`Maximum stock (${cart[cartItemIndex].book.quantity}) reached for this item.`);
+                }
+            } else if (e.target.classList.contains('minus-btn')) {
+                cart[cartItemIndex].quantity--;
+                if (cart[cartItemIndex].quantity === 0) {
+                    cart.splice(cartItemIndex, 1);
+                }
+            } else if (e.target.classList.contains('remove-btn')) {
+                cart.splice(cartItemIndex, 1);
+            }
+            updateCart(cart);
+        });
+
+        clearCartBtn.addEventListener('click', () => {
+            if (confirm('Are you sure you want to clear your cart?')) {
+                updateCart([]);
+            }
+        });
+        
+        applyDiscountBtn.addEventListener('click', () => {
+            const code = discountInput.value.trim().toUpperCase();
+            if (discountCodes[code]) {
+                appliedDiscount = discountCodes[code];
+                discountMessage.textContent = `"${code}" applied! You get ${appliedDiscount * 100}% off.`;
+                discountMessage.style.color = 'green';
+                discountInput.disabled = true;
+                applyDiscountBtn.disabled = true;
+            } else {
+                appliedDiscount = 0;
+                discountMessage.textContent = 'Invalid coupon code.';
+                discountMessage.style.color = 'red';
+            }
+            renderCart(); // Recalculate totals
+        });
+
+        renderCart();
+    });
+  </script>
 
 </body>
 </html>
