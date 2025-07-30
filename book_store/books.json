@@ -1,0 +1,182 @@
+[
+  {
+    "title": "Advanced Algorithms",
+    "author": "Dr. Sarah Chen",
+    "category": "Computer Science",
+    "price": 89.99,
+    "rating": 1.9,
+    "quantity": 5,
+    "image": "https://images.pexels.com/photos/159711/books-bookstore-book-reading-159711.jpeg"
+  },
+  {
+    "title": "Digital Signal Processing",
+    "author": "Prof. Michael Rodriguez",
+    "category": "Electronics",
+    "price": 94.99,
+    "rating": 1.8,
+    "quantity": 0,
+    "image": "https://images.pexels.com/photos/1029141/pexels-photo-1029141.jpeg"
+  },
+  {
+    "title": "Power Systems Analysis",
+    "author": "Dr. Emily Johnson",
+    "category": "Electrical",
+    "price": 76.99,
+    "rating": 4.7,
+    "quantity": 12,
+    "image": "https://media.springernature.com/full/springer-static/cover-hires/book/978-981-15-3212-2"
+  },
+  {
+    "title": "Advanced Civil Engineering",
+    "author": "Dr. Sarah Chen",
+    "category": "Civil Engineering",
+    "price": 89.99,
+    "rating": 2.9,
+    "quantity": 1,
+    "image": "https://m.media-amazon.com/images/I/61CRdeBnfqL._UF1000,1000_QL80_.jpg"
+  },
+  {
+    "title": "Digital Signal Processing 2",
+    "author": "Prof. Michael Rodriguez",
+    "category": "Electronics",
+    "price": 94.99,
+    "rating": 4.8,
+    "quantity": 8,
+    "image": "https://media.springernature.com/full/springer-static/cover-hires/book/978-3-030-96322-4"
+  },
+  {
+    "title": "The Art of Computer Programming",
+    "author": "Donald Knuth",
+    "category": "Computer Science",
+    "price": 120.50,
+    "rating": 5.0,
+    "quantity": 3,
+    "image": "https://images.pexels.com/photos/2041540/pexels-photo-2041540.jpeg"
+  },
+  {
+    "title": "Structural Engineering Handbook",
+    "author": "Dr. John Davis",
+    "category": "Civil Engineering",
+    "price": 110.00,
+    "rating": 2.8,
+    "quantity": 6,
+    "image": "https://images.pexels.com/photos/1106468/pexels-photo-1106468.jpeg"
+  },
+  {
+    "title": "Introduction to Machine Learning",
+    "author": "Dr. Ava Wong",
+    "category": "Computer Science",
+    "price": 99.50,
+    "rating": 4.9,
+    "quantity": 10,
+    "image": "https://images.pexels.com/photos/3861969/pexels-photo-3861969.jpeg"
+  },
+  {
+    "title": "Circuit Design and Simulation",
+    "author": "Prof. Ian Miller",
+    "category": "Electronics",
+    "price": 85.00,
+    "rating": 4.7,
+    "quantity": 7,
+    "image": "https://images.pexels.com/photos/416405/pexels-photo-416405.jpeg"
+  },
+  {
+    "title": "Renewable Energy Systems",
+    "author": "Dr. Maria Garcia",
+    "category": "Electrical",
+    "price": 115.75,
+    "rating": 0.9,
+    "quantity": 9,
+    "image": "https://images.pexels.com/photos/414837/pexels-photo-414837.jpeg"
+  },
+  {
+    "title": "Python for Data Analysis",
+    "author": "Dr. David Lee",
+    "category": "Computer Science",
+    "price": 79.99,
+    "rating": 4.8,
+    "quantity": 15,
+    "image": "https://images.pexels.com/photos/1181671/pexels-photo-1181671.jpeg"
+  },
+  {
+    "title": "Power Systems Analysis 2",
+    "author": "Dr. Emily Johnson",
+    "category": "Electrical",
+    "price": 76.99,
+    "rating": 4.7,
+    "quantity": 0,
+    "image": "https://media.springernature.com/full/springer-static/cover-hires/book/978-981-15-3212-2"
+  },
+  {
+    "title": "Data Structures in C++",
+    "author": "Dr. Robert Lafore",
+    "category": "Computer Science",
+    "price": 65.50,
+    "rating": 1.6,
+    "quantity": 20,
+    "image": "https://images.pexels.com/photos/270348/pexels-photo-270348.jpeg"
+  },
+  {
+    "title": "Microelectronic Circuits",
+    "author": "Adel S. Sedra",
+    "category": "Electronics",
+    "price": 130.00,
+    "rating": 5.0,
+    "quantity": 8,
+    "image": "https://images.pexels.com/photos/459653/pexels-photo-459653.jpeg"
+  },
+  {
+    "title": "Fundamentals of Electric Power",
+    "author": "Dr. Charles A. Gross",
+    "category": "Electrical",
+    "price": 125.00,
+    "rating": 4.8,
+    "quantity": 11,
+    "image": "https://images.pexels.com/photos/577769/pexels-photo-577769.jpeg"
+  },
+  {
+    "title": "Soil Mechanics and Foundations",
+    "author": "Dr. Muni Budhu",
+    "category": "Civil Engineering",
+    "price": 150.25,
+    "rating": 0.9,
+    "quantity": 4,
+    "image": "https://images.pexels.com/photos/1269968/pexels-photo-1269968.jpeg"
+  },
+  {
+    "title": "Operating System Concepts",
+    "author": "Abraham Silberschatz",
+    "category": "Computer Science",
+    "price": 112.99,
+    "rating": 4.9,
+    "quantity": 0,
+    "image": "https://images.pexels.com/photos/546819/pexels-photo-546819.jpeg"
+  },
+  {
+    "title": "Wireless Communications",
+    "author": "Andrea Goldsmith",
+    "category": "Electronics",
+    "price": 140.00,
+    "rating": 4.8,
+    "quantity": 9,
+    "image": "https://images.pexels.com/photos/3401402/pexels-photo-3401402.jpeg"
+  },
+  {
+    "title": "Control Systems Engineering",
+    "author": "Norman S. Nise",
+    "category": "Electrical",
+    "price": 105.50,
+    "rating": 1.7,
+    "quantity": 13,
+    "image": "https://images.pexels.com/photos/326514/pexels-photo-326514.jpeg"
+  },
+  {
+    "title": "Hydraulics in Civil Engineering",
+    "author": "Andrew Chadwick",
+    "category": "Civil Engineering",
+    "price": 135.00,
+    "rating": 0.6,
+    "quantity": 7,
+    "image": "https://images.pexels.com/photos/834892/pexels-photo-834892.jpeg"
+  }
+]
